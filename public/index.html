@@ -3,21 +3,42 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Who Owns Your Road</title>
-  <meta name="description" content="One rush-hour trip on a DFW express lane has cost $24. The road is a Texas highway. Private investors keep the tolls until 2061. See who, and tell the Legislature to act.">
   <meta name="theme-color" content="#141618">
+  <link rel="stylesheet" href="/css/site.css?v=20261017d">
+  <!-- seo:start -->
+  <title>You paid for this road. They charge $24 to use it. | Who Owns Your Road</title>
+  <meta name="description" content="DFW express lane tolls have hit $24 for six miles. The highways are Texas-owned. The tolls go to private investors until 2061. See who, and tell the Legislature to act.">
+  <link rel="canonical" href="https://whoownsyourroad.com/">
+  <meta name="robots" content="index, follow, max-image-preview:large">
   <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="/css/site.css?v=20261017c">
+  <link rel="icon" href="/img/icon-192.png" type="image/png" sizes="192x192">
+  <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="preload" href="/fonts/overpass-latin-900-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/overpass-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
   <meta property="og:type" content="website">
-  <meta property="og:title" content="One trip. $24. On a road you already paid for.">
-  <meta property="og:description" content="DFW's express lanes are Texas highways. Private investors set the price and keep the tolls until 2061. Who owns your road?">
-  <meta property="og:image" content="https://whoownsyourroad.com/img/share.png">
+  <meta property="og:site_name" content="Who Owns Your Road">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:url" content="https://whoownsyourroad.com/">
+  <meta property="og:title" content="You paid for this road. They charge $24 to use it.">
+  <meta property="og:description" content="Six miles on Loop 820. The tolls go to investors in Amsterdam and Paris until 2061. 60 seconds to tell the Legislature it&#x27;s over.">
+  <meta property="og:image" content="https://whoownsyourroad.com/img/share-home-v4.png">
+  <meta property="og:image:secure_url" content="https://whoownsyourroad.com/img/share-home-v4.png">
+  <meta property="og:image:type" content="image/png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="You paid for this road. They charge $24 to use it.">
+  <meta property="og:image" content="https://whoownsyourroad.com/img/share-square-v4.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="1200">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="One trip. $24. On a road you already paid for.">
-  <meta name="twitter:description" content="Private investors set the price and keep the tolls until 2061. Who owns your road?">
-  <meta name="twitter:image" content="https://whoownsyourroad.com/img/share.png">
+  <meta name="twitter:title" content="You paid for this road. They charge $24 to use it.">
+  <meta name="twitter:description" content="Six miles on Loop 820. The tolls go to investors in Amsterdam and Paris until 2061. 60 seconds to tell the Legislature it&#x27;s over.">
+  <meta name="twitter:image" content="https://whoownsyourroad.com/img/share-home-v4.png">
+  <meta name="twitter:image:alt" content="You paid for this road. They charge $24 to use it.">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://whoownsyourroad.com/#org","name":"Who Owns Your Road","url":"https://whoownsyourroad.com/","logo":"https://whoownsyourroad.com/img/icon-512.png","email":"hello@whoownsyourroad.com","description":"An independent project on who controls Texas toll lanes, starting with the DFW express lanes."},{"@type":"WebSite","@id":"https://whoownsyourroad.com/#site","name":"Who Owns Your Road","url":"https://whoownsyourroad.com/","publisher":{"@id":"https://whoownsyourroad.com/#org"},"inLanguage":"en-US"}]}</script>
+  <!-- seo:end -->
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -180,9 +201,10 @@
             <label for="zip">ZIP code <span class="hint">So we can match you to your legislators</span></label>
             <input type="text" id="zip" name="zip" inputmode="numeric" autocomplete="postal-code" pattern="\d{5}" required maxlength="5" style="max-width:9em">
           </div>
-          <div class="field">
-            <label for="comment">Why this matters to you <span class="hint">Optional. We may share comments without your name.</span></label>
-            <textarea id="comment" name="comment" rows="2" maxlength="500"></textarea>
+          <button class="note-toggle" type="button" id="note-toggle" aria-expanded="false" aria-controls="note-field">Add a note about why this matters to you (optional)</button>
+          <div class="field" id="note-field" hidden>
+            <label for="comment">Why this matters to you <span class="hint">We may share comments without your name.</span></label>
+            <textarea id="comment" name="comment" rows="3" maxlength="500"></textarea>
           </div>
           <div class="hp" aria-hidden="true">
             <label for="website">Leave this empty</label>
@@ -243,8 +265,8 @@
     </div>
   </footer>
 
-  <script src="/js/dotmatrix.js?v=20261017c" defer></script>
-  <script src="/js/site.js?v=20261017c" defer></script>
-  <script src="/js/petition.js?v=20261017c" defer></script>
+  <script src="/js/dotmatrix.js?v=20261017d" defer></script>
+  <script src="/js/site.js?v=20261017d" defer></script>
+  <script src="/js/petition.js?v=20261017d" defer></script>
 </body>
 </html>

@@ -50,6 +50,17 @@
     return firstBad;
   }
 
+  var noteToggle = document.getElementById("note-toggle");
+  var noteField = document.getElementById("note-field");
+  if (noteToggle && noteField) {
+    noteToggle.addEventListener("click", function () {
+      noteField.hidden = false;
+      noteToggle.hidden = true;
+      noteToggle.setAttribute("aria-expanded", "true");
+      form.elements.comment.focus();
+    });
+  }
+
   form.addEventListener("submit", function (e) {
     e.preventDefault();
     statusEl.textContent = "";
