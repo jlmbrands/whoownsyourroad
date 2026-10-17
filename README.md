@@ -70,5 +70,4 @@ Everything database-related lives in `db.js`, which exports `addSignature`, `get
 - Set up the `hello@` contact address used on the About page
 - Re-check ownership shares and figures against the latest filings
 - Put the site behind HTTPS (the rate limiter trusts one proxy hop)
-- Most social networks need absolute `og:image` URLs, so set the real domain in those tags once it exists
 - Optional: a ZIP-to-legislator lookup (Open States or Cicero APIs, paid above a free tier) would let the write page address the email automatically
