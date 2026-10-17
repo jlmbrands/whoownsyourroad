@@ -119,7 +119,7 @@
     shareBtn.addEventListener("click", function () {
       var rounded = currentTotal >= 1000 ? Math.round(currentTotal / 100) * 100 : Math.round(currentTotal);
       var text = "If nothing changes, I'll pay about $" + fmt(rounded) +
-        " in express lane tolls by 2061. The lanes are on state highways. The companies that set the price keep it. Who owns your road?";
+        " in express lane tolls by 2061. On roads our taxes built. What's yours?";
       window.shareText(text, siteUrl("/#bill"), shareBtn);
     });
 
@@ -128,7 +128,7 @@
 
   // ---- Sharing ----
 
-  var DEFAULT_TEXT = "The express lanes on I-35W, 820, 183 and LBJ are state highways. Private investors set the price and keep the tolls until 2061. Rush-hour tolls have hit $24. Who owns your road?";
+  var DEFAULT_TEXT = "$24 for about six miles on Loop 820. On a road our taxes built. The tolls go to private investors until 2061.";
 
   function copy(text, el) {
     function done() {
@@ -226,10 +226,15 @@
   // ---- Action pill: hide while the sign-up form is on screen ----
 
   var pill = document.querySelector(".pill");
-  var signSection = document.getElementById("sign");
-  if (pill && signSection && "IntersectionObserver" in window) {
-    new IntersectionObserver(function (entries) {
-      pill.classList.toggle("hide", entries[0].isIntersecting);
-    }, { threshold: 0.25 }).observe(signSection);
+  var quiet = ["sign", "share"].map(function (id) { return document.getElementById(id); }).filter(Boolean);
+  if (pill && quiet.length && "IntersectionObserver" in window) {
+    var visible = new Set();
+    var po = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) visible.add(e.target); else visible.delete(e.target);
+      });
+      pill.classList.toggle("hide", visible.size > 0);
+    }, { threshold: 0.15 });
+    quiet.forEach(function (el) { po.observe(el); });
   }
 })();
