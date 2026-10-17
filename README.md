@@ -65,6 +65,16 @@ Everything database-related lives in `db.js`, which exports `addSignature`, `get
 | `PORT`     | `3000`     | Server port                   |
 | `DATA_DIR` | `./data`   | Where the SQLite file is kept |
 
+## Deploy on Railway
+
+1. railway.com → New Project → Deploy from GitHub repo → `jlmbrands/whoownsyourroad`. Railway detects Node and runs `npm start`.
+2. On the service, add a **Volume** mounted at `/data`.
+3. Under Variables, set `DATA_DIR=/data` so signatures land on the volume and survive redeploys.
+4. Under Settings → Networking, add the custom domain `whoownsyourroad.com` (and `www`), then create the DNS records Railway shows you at your registrar.
+5. Optional: set the health check path to `/healthz`.
+
+Every push to `main` redeploys automatically.
+
 ## Before launch
 
 - Set up the `hello@` contact address used on the About page

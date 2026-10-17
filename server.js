@@ -68,6 +68,8 @@ function clean(value, max) {
   return String(value || "").replace(/\s+/g, " ").trim().slice(0, max);
 }
 
+app.get("/healthz", (req, res) => res.type("text").send("ok"));
+
 app.get("/api/petition/count", (req, res) => {
   res.set("Cache-Control", "no-store");
   res.json(getCounts());
