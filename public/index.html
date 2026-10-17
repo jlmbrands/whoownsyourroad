@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#141618">
-  <link rel="stylesheet" href="/css/site.css?v=20261017f">
+  <link rel="stylesheet" href="/css/site.css?v=20261017g">
   <!-- seo:start -->
   <title>You paid for this road. They charge $24 to use it. | Who Owns Your Road</title>
   <meta name="description" content="DFW express lane tolls have hit $24 for six miles. The highways are Texas-owned. The tolls go to private investors until 2061. See who, and tell the Legislature to act.">
@@ -167,65 +167,22 @@
       </div>
     </section>
 
-    <!-- 9. Sign -->
-    <section class="sign green" id="sign" aria-label="Add your name">
+    <!-- 9. Your exit: the call to action. The petition itself lives on /sign. -->
+    <section class="sign exitzone" id="exit" aria-label="Sign the petition">
+      <div class="road" aria-hidden="true"></div>
       <div class="inner">
-        <p class="marker"><span class="bar"></span>Add your name</p>
-        <h2 class="say wide">Add your name.</h2>
-        <div class="goal low" data-goal>
-          <p class="first">Be one of the first 100.</p>
-          <div class="nums"><strong data-sig-count>0</strong><span>of 10,000</span></div>
-          <div class="track" data-goal-bar role="progressbar" aria-valuemin="0" aria-valuemax="10000" aria-valuenow="0" aria-label="Signatures toward goal"><div class="fill" data-goal-fill></div></div>
+        <p class="marker"><span class="bar"></span>Your exit</p>
+        <div class="gantry-post reveal">
+          <a class="exit-sign" href="/sign">
+            <span class="exit-tab">EXIT <b>1</b></span>
+            <span class="exit-shine" aria-hidden="true"></span>
+            <span class="exit-dest">Sign the petition</span>
+            <span class="exit-arrow" aria-hidden="true"><svg viewBox="0 0 64 64"><path d="M14 50 L44 20 M24 18 H46 V40" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="square"/></svg></span>
+            <span class="exit-sub">Austin<i aria-hidden="true">·</i>January 12</span>
+          </a>
         </div>
-        <p class="countdown">We deliver it to your legislators by January 12.</p>
-
-        <form class="petition side" id="petition-form" novalidate>
-          <div class="field-row">
-            <div class="field">
-              <label for="first_name">First name</label>
-              <input type="text" id="first_name" name="first_name" autocomplete="given-name" required maxlength="60">
-            </div>
-            <div class="field">
-              <label for="last_name">Last name</label>
-              <input type="text" id="last_name" name="last_name" autocomplete="family-name" required maxlength="60">
-            </div>
-          </div>
-          <div class="field">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" autocomplete="email" required maxlength="254">
-          </div>
-          <div class="field">
-            <label for="zip">ZIP code <span class="hint">To find your legislators</span></label>
-            <input type="text" id="zip" name="zip" inputmode="numeric" autocomplete="postal-code" pattern="\d{5}" required maxlength="5" style="max-width:9em">
-          </div>
-          <button class="note-toggle" type="button" id="note-toggle" aria-expanded="false" aria-controls="note-field">Add a note (optional)</button>
-          <div class="field" id="note-field" hidden>
-            <label for="comment">Why this matters to you <span class="hint">We may share comments without your name.</span></label>
-            <textarea id="comment" name="comment" rows="3" maxlength="500"></textarea>
-          </div>
-          <div class="hp" aria-hidden="true">
-            <label for="website">Leave this empty</label>
-            <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
-          </div>
-          <div class="check">
-            <input type="checkbox" id="wants_updates" name="wants_updates" value="1">
-            <label for="wants_updates">Email me updates</label>
-          </div>
-          <button class="button amber" type="submit">Sign the petition</button>
-          <p class="form-status" id="form-status" role="status"></p>
-          <p class="fine">Only your legislators see your name. Email never shared. <a href="/about#privacy">Privacy</a></p>
-        </form>
-
-        <div class="thanks side" id="thanks" hidden tabindex="-1">
-          <h3>You're on it.</h3>
-          <p id="thanks-body">Now send it to one friend.</p>
-          <div class="actions">
-            <a class="button" href="/write">Email your reps</a>
-            <button class="button ghost" type="button" data-share="native" data-path="/">Share</button>
-            <button class="button ghost" type="button" data-share="sms" data-path="/">Text a friend</button>
-            <button class="button ghost" type="button" data-share="copy" data-path="/">Copy link</button>
-          </div>
-        </div>
+        <p class="exit-line reveal d1">60 seconds. Lawmakers meet in <span data-days-to-session>87 days</span>.</p>
+        <p class="exit-count reveal d2" data-goal><span class="first">Be one of the first 100.</span><span class="nums"><strong data-sig-count>0</strong> names so far</span></p>
       </div>
     </section>
 
@@ -250,7 +207,7 @@
   </main>
 
   <nav class="pill" aria-label="Quick actions">
-    <a class="primary" href="#sign">Sign</a>
+    <a class="primary" href="/sign">Sign</a>
     <a href="#share">Share</a>
   </nav>
 
@@ -261,8 +218,7 @@
     </div>
   </footer>
 
-  <script src="/js/dotmatrix.js?v=20261017f" defer></script>
-  <script src="/js/site.js?v=20261017f" defer></script>
-  <script src="/js/petition.js?v=20261017f" defer></script>
-</body>
+  <script src="/js/dotmatrix.js?v=20261017g" defer></script>
+  <script src="/js/site.js?v=20261017g" defer></script>
+  </body>
 </html>

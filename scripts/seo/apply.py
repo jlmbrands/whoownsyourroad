@@ -23,6 +23,15 @@ PAGES = {
         image="home",
         type="website",
     ),
+    "sign.html": dict(
+        path="/sign",
+        title="Sign the petition: cap DFW express lane tolls | Who Owns Your Road",
+        description="Tell the Texas Legislature to cap surge tolls on private express lanes, open the books and vote before any new deal. Takes 60 seconds. Delivered January 12.",
+        og_title="Add your name. Austin hears it January 12.",
+        og_description="$24 for six miles, on roads our taxes built. Tell the Legislature to cap it. 60 seconds.",
+        image="home",
+        type="website",
+    ),
     "roads.html": dict(
         path="/roads",
         title="Who owns the TEXpress lanes? NTE, NTE 35W and LBJ, explained | Who Owns Your Road",

@@ -95,7 +95,14 @@
       .then(function (res) {
         var data = res.data || {};
         if (data.ok) {
-          if (data.counts && window.updateSignatureCount) window.updateSignatureCount(data.counts.total);
+          var n = data.counts ? Number(data.counts.total) : 0;
+          if (n && window.updateSignatureCount) window.updateSignatureCount(n);
+          var you = document.querySelector("[data-led-you]");
+          if (n && you && window.dotMatrix) {
+            you.innerHTML = window.dotMatrix("#" + n.toLocaleString("en-US"));
+            document.getElementById("thanks-title").textContent = "You're signer #" + n.toLocaleString("en-US") + ".";
+          }
+          document.body.classList.add("signed");
           if (data.is_texas === false) {
             thanksBody.textContent = "Your ZIP code is outside Texas, so we'll count you as a supporter rather than a constituent. You can still help by sending this to people who drive these roads.";
           }

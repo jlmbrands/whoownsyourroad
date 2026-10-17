@@ -24,7 +24,7 @@ app.use((req, res, next) => {
   next();
 });
 
-app.get("/petition", (req, res) => res.redirect(301, "/#sign"));
+app.get("/petition", (req, res) => res.redirect(301, "/sign"));
 
 // HTML is never cached; versioned assets (?v=) are cached for a year.
 app.use(

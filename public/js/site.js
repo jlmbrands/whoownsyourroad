@@ -20,6 +20,31 @@
 
   var SHOW_COUNT_AT = 100;
 
+  // Old links and shares point at /#sign. The petition now has its own page.
+  if (location.pathname === "/" && location.hash === "#sign") {
+    location.replace("/sign");
+    return;
+  }
+
+  // LED counter on /sign: ticks up from zero the first time, like a gantry updating.
+  var ledShown = 0;
+  function paintLed(el, n) {
+    el.innerHTML = window.dotMatrix ? window.dotMatrix(fmt(n)) : fmt(n);
+  }
+  function tickLed(el, to) {
+    if (reduceMotion || to <= ledShown) { ledShown = to; paintLed(el, to); return; }
+    var from = ledShown, start = null, dur = Math.min(1600, 400 + to * 4);
+    function step(ts) {
+      if (start === null) start = ts;
+      var t = Math.min((ts - start) / dur, 1);
+      var e = 1 - Math.pow(1 - t, 3);
+      paintLed(el, Math.round(from + (to - from) * e));
+      if (t < 1) requestAnimationFrame(step);
+    }
+    ledShown = to;
+    requestAnimationFrame(step);
+  }
+
   window.updateSignatureCount = function (total) {
     total = Number(total || 0);
     document.querySelectorAll("[data-goal]").forEach(function (g) {
@@ -34,9 +59,12 @@
     document.querySelectorAll("[data-goal-bar]").forEach(function (el) {
       el.setAttribute("aria-valuenow", total);
     });
+    document.querySelectorAll("[data-led-count]").forEach(function (el) {
+      tickLed(el, total);
+    });
   };
 
-  if (document.querySelector("[data-sig-count]")) {
+  if (document.querySelector("[data-sig-count], [data-led-count]")) {
     fetch("/api/petition/count")
       .then(function (r) { return r.ok ? r.json() : null; })
       .then(function (d) { if (d) window.updateSignatureCount(d.total); })
@@ -52,6 +80,9 @@
     } else {
       el.textContent = daysLeft === 1 ? "1 day" : fmt(daysLeft) + " days";
     }
+  });
+  document.querySelectorAll("[data-led-days]").forEach(function (el) {
+    el.innerHTML = window.dotMatrix(daysLeft > 0 ? String(daysLeft) : "0");
   });
   document.querySelectorAll("[data-session-line]").forEach(function (el) {
     if (daysLeft <= 0) el.textContent = "The session is open.";
@@ -223,10 +254,10 @@
     reveals.forEach(function (el) { el.classList.add("in"); });
   }
 
-  // ---- Action pill: hide while the sign-up form is on screen ----
+  // ---- Action pill: hide while the exit sign or share screen is up ----
 
   var pill = document.querySelector(".pill");
-  var quiet = ["sign", "share"].map(function (id) { return document.getElementById(id); }).filter(Boolean);
+  var quiet = ["exit", "share"].map(function (id) { return document.getElementById(id); }).filter(Boolean);
   if (pill && quiet.length && "IntersectionObserver" in window) {
     var visible = new Set();
     var po = new IntersectionObserver(function (entries) {

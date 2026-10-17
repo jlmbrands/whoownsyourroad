@@ -350,18 +350,6 @@ li { margin-bottom: 0.4em; }
 .asks h3 { margin: 0 0 4px; font-weight: 900; font-size: 1.3rem; line-height: 1.15; }
 .asks p { margin: 0; font-size: 1.05rem; }
 
-/* ---------- Goal ---------- */
-
-.goal { margin: 20px 0 8px; max-width: 520px; }
-.goal .nums { display: flex; justify-content: space-between; align-items: baseline; font-weight: 700; }
-.goal .nums strong { font-size: clamp(2.4rem, 8vw, 3.4rem); font-weight: 900; line-height: 1; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
-.goal .track { height: 16px; background: rgba(0, 0, 0, 0.25); border-radius: 4px; margin-top: 10px; overflow: hidden; border: 2px solid rgba(255,255,255,0.6); }
-.goal .fill { height: 100%; background: var(--amber); width: 0; min-width: 6px; transition: width 900ms ease-out; }
-.countdown { font-size: 1.1rem; font-weight: 600; margin: 14px 0 0; }
-.goal .first { display: none; font-weight: 900; font-size: clamp(1.6rem, 5vw, 2.4rem); line-height: 1.05; margin: 0; }
-.goal.low .first { display: block; }
-.goal.low .nums, .goal.low .track { display: none; }
-
 /* ---------- Forms ---------- */
 
 form.petition {
@@ -506,7 +494,7 @@ ol.sources .src-note { display: block; color: var(--muted); }
 
 @media (prefers-reduced-motion: reduce) {
   .reveal { opacity: 1; transform: none; transition: none; }
-  .pill, .goal .fill { transition: none; }
+  .pill { transition: none; }
 }
 
 @media (max-width: 560px) {
@@ -532,3 +520,144 @@ ol.sources .src-note { display: block; color: var(--muted); }
 
 /* Optional note collapses behind a link */
 .note-toggle { display: block; text-align: left; font: inherit; font-weight: 700; font-size: 0.98rem; background: none; border: 0; padding: 0; color: var(--green); text-decoration: underline; cursor: pointer; margin: 0 0 14px; }
+
+/* ---------- Your exit: the home page call to action ----------
+   A green guide sign hanging from a gantry over a moving road at night.
+   Green means "this is where you go". The whole sign is the link. */
+
+.sign.exitzone { background: var(--asphalt); color: var(--white); overflow: hidden; isolation: isolate; }
+.sign.exitzone::before { display: none; }
+.sign.exitzone .inner { position: relative; z-index: 1; text-align: center; display: block; }
+.sign.exitzone .marker { justify-content: center; }
+
+/* Lane lines rushing toward you */
+.road { position: absolute; left: 0; right: 0; bottom: 0; height: 52%; perspective: 340px; overflow: hidden; z-index: 0; pointer-events: none;
+  -webkit-mask-image: linear-gradient(to top, #000 35%, transparent); mask-image: linear-gradient(to top, #000 35%, transparent); }
+.road::before {
+  content: ""; position: absolute; left: 50%; bottom: 0; width: 170%; height: 260%;
+  transform: translateX(-50%) rotateX(72deg); transform-origin: 50% 100%;
+  background:
+    linear-gradient(rgba(255,255,255,.55), rgba(255,255,255,.55)) 6% 0 / 6px 100% no-repeat,
+    repeating-linear-gradient(to bottom, rgba(255,255,255,.6) 0 70px, transparent 70px 170px) 36% 0 / 7px 100%,
+    repeating-linear-gradient(to bottom, rgba(255,255,255,.6) 0 70px, transparent 70px 170px) 64% 0 / 7px 100%,
+    linear-gradient(var(--amber), var(--amber)) 94% 0 / 6px 100% no-repeat,
+    #1b1e21;
+  background-repeat: no-repeat, repeat-y, repeat-y, no-repeat, no-repeat;
+  animation: drive 0.7s linear infinite;
+}
+@keyframes drive {
+  from { background-position: 6% 0, 36% 0, 64% 0, 94% 0, 0 0; }
+  to   { background-position: 6% 0, 36% 170px, 64% 170px, 94% 0, 0 0; }
+}
+
+/* Gantry truss and the sign hanging from it */
+.gantry-post { position: relative; max-width: 760px; margin: 0 auto; padding-top: 34px; }
+.gantry-post::before {
+  content: ""; position: absolute; top: 0; left: -40vw; right: -40vw; height: 16px;
+  background: repeating-linear-gradient(135deg, #6c7378 0 3px, #3c4246 3px 14px);
+  border-top: 3px solid #8c949a; border-bottom: 3px solid #8c949a;
+}
+.gantry-post::after {
+  content: ""; position: absolute; top: 16px; left: 22%; right: 22%; height: 18px;
+  border-left: 6px solid #7d858b; border-right: 6px solid #7d858b;
+}
+
+.exit-sign {
+  position: relative; display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 4px 16px;
+  text-align: left; text-decoration: none; color: #fff;
+  background: var(--green); border-radius: 18px;
+  padding: clamp(22px, 5vw, 44px) clamp(22px, 5vw, 48px) clamp(18px, 4vw, 36px);
+  box-shadow: inset 0 0 0 4px var(--green), inset 0 0 0 8px #fff, 0 24px 60px rgba(0, 0, 0, 0.55), 0 0 90px rgba(0, 112, 60, 0.35);
+  overflow: hidden;
+  transition: transform 200ms ease-out, box-shadow 200ms ease-out;
+}
+.exit-sign:hover, .exit-sign:focus-visible { transform: translateY(-4px) scale(1.015); text-decoration: none; }
+.exit-sign:focus-visible { outline: 5px solid var(--amber); outline-offset: 6px; }
+
+.exit-tab {
+  position: absolute; top: 0; right: clamp(18px, 5vw, 44px);
+  background: var(--green); color: #fff; font-weight: 900; font-size: clamp(0.95rem, 2.6vw, 1.3rem); letter-spacing: 0.04em;
+  padding: 10px 16px 6px; border: 4px solid #fff; border-top: 0; border-radius: 0 0 10px 10px;
+}
+.exit-tab b { font-size: 1.35em; margin-left: 2px; }
+
+.exit-dest { grid-column: 1; margin-top: clamp(18px, 4vw, 26px); font-weight: 900; font-size: clamp(2.3rem, 10.5vw, 5.4rem); line-height: 0.95; letter-spacing: -0.02em; text-wrap: balance; }
+.exit-arrow { grid-column: 2; grid-row: 1 / span 2; align-self: center; width: clamp(56px, 15vw, 120px); transition: transform 200ms ease-out; }
+.exit-arrow svg { width: 100%; height: auto; }
+.exit-sign:hover .exit-arrow { transform: translate(6px, -6px); }
+.exit-sub { grid-column: 1; font-weight: 700; font-size: clamp(1.1rem, 3.6vw, 1.7rem); opacity: 0.95; }
+.exit-sub i { font-style: normal; margin: 0 0.3em; }
+
+/* Retroreflective glare: headlights sweeping across the sheeting */
+.exit-shine { position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(105deg, transparent 35%, rgba(255,255,255,0.32) 48%, rgba(255,255,255,0.05) 56%, transparent 66%);
+  transform: translateX(-120%); animation: glare 4.8s ease-in-out 1.4s infinite; }
+@keyframes glare { 0% { transform: translateX(-120%); } 38%, 100% { transform: translateX(120%); } }
+
+/* The sign swings down into place when it scrolls into view */
+.gantry-post.reveal { transform: none; opacity: 1; }
+.gantry-post.reveal .exit-sign { transform-origin: 50% -30px; }
+.gantry-post.reveal:not(.in) .exit-sign { opacity: 0; transform: translateY(-50px) rotate(-3deg); }
+.gantry-post.reveal.in .exit-sign { animation: hang 900ms cubic-bezier(.2,.8,.3,1.2) both; }
+@keyframes hang { 0% { opacity: 0; transform: translateY(-50px) rotate(-3deg); } 60% { opacity: 1; transform: translateY(4px) rotate(1deg); } 100% { transform: none; } }
+
+.exit-line { font-weight: 700; font-size: clamp(1.15rem, 3.4vw, 1.5rem); margin: clamp(28px, 5vh, 44px) auto 6px; max-width: 30ch; }
+.exit-count { font-weight: 700; color: #b9c0bc; margin: 0 auto; }
+.exit-count strong { color: var(--amber); font-weight: 900; font-variant-numeric: tabular-nums; }
+.exit-count .first, .led .first { display: none; }
+.exit-count.low .first, .led.low .first { display: inline; }
+.exit-count.low .nums, .led.low .nums, .led.low .mx { display: none; }
+
+/* ---------- /sign: the petition page ---------- */
+
+.signpage { background: var(--green); }
+html:has(body.signpage) { background: var(--green); }
+.signpage .sign { margin-top: 0; min-height: 0; padding-top: 92px; padding-bottom: 56px; }
+.signpage .sign::before { top: 58px; }
+@media (min-width: 900px) {
+  .signpage .sign { max-width: none; margin: 0; border-radius: 0; min-height: 100svh; padding-top: 120px; }
+  .signpage .sign::before { top: 64px; }
+}
+.signpage .say { margin-top: 0; }
+
+.exit-chip {
+  display: inline-block; font-weight: 900; font-size: 0.85rem; letter-spacing: 0.04em;
+  border: 3px solid #fff; border-radius: 6px; padding: 5px 9px 2px;
+}
+
+.led-row { display: flex; flex-wrap: wrap; gap: 12px; margin: 8px 0 4px; }
+.led {
+  flex: 1 1 150px; max-width: 240px;
+  background: #0b0c0d; border: 3px solid #3a3e42; border-radius: 10px; box-shadow: inset 0 0 0 2px #000;
+  padding: 14px 16px 10px; color: #d6dad7;
+}
+.led .mx { height: 38px; display: flex; align-items: center; }
+.led .mx svg { height: 100%; width: auto; max-width: 100%; filter: drop-shadow(0 0 6px var(--amber-glow)); }
+.led span { display: block; font-weight: 700; font-size: 0.92rem; margin-top: 8px; }
+.led.low .first { display: block; color: var(--amber); font-weight: 900; font-size: 1.15rem; line-height: 1.15; margin-top: 0; }
+
+.signup-card form.petition, .signup-card .thanks { margin-top: 24px; box-shadow: 0 18px 50px rgba(0, 0, 0, 0.28); }
+@media (min-width: 900px) { .signup-card form.petition, .signup-card .thanks { margin-top: 0; } }
+
+details.what { margin: 0 0 16px; border-bottom: 2px solid var(--line); padding-bottom: 12px; }
+details.what summary { cursor: pointer; font-weight: 800; color: var(--green); }
+details.what ol { margin: 10px 0 0; font-size: 1rem; }
+details.what li { margin-bottom: 4px; }
+
+.button.go { font-size: 1.3rem; padding: 22px 26px 18px; box-shadow: 0 0 0 0 var(--amber-glow); animation: beacon 2.4s ease-out infinite; }
+.button.go::after { content: " →"; }
+.button.go[disabled] { animation: none; }
+@keyframes beacon { 0% { box-shadow: 0 0 0 0 rgba(255, 176, 0, 0.6); } 70%, 100% { box-shadow: 0 0 0 16px rgba(255, 176, 0, 0); } }
+
+.thanks h2 { margin: 0 0 8px; font-weight: 900; font-size: clamp(1.6rem, 6vw, 2.2rem); line-height: 1.05; }
+.thanks-led { background: #0b0c0d; border: 3px solid #3a3e42; border-radius: 10px; padding: 16px 18px; margin: 0 0 16px; }
+.thanks-led:has(.mx:empty) { display: none; }
+.thanks-led svg { width: 100%; max-height: 72px; height: auto; filter: drop-shadow(0 0 8px var(--amber-glow)); }
+.signed .thanks { animation: pop 500ms cubic-bezier(.2,.8,.3,1.3) both; }
+@keyframes pop { from { transform: scale(0.94); opacity: 0; } to { transform: none; opacity: 1; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .road::before, .exit-shine, .button.go, .signed .thanks { animation: none; }
+  .exit-shine { display: none; }
+  .gantry-post.reveal .exit-sign, .gantry-post.reveal.in .exit-sign { opacity: 1; transform: none; animation: none; }
+}
