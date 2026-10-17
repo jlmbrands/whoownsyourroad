@@ -612,12 +612,19 @@ ol.sources .src-note { display: block; color: var(--muted); }
 
 .signpage { background: var(--green); }
 html:has(body.signpage) { background: var(--green); }
-.signpage .sign { margin-top: 0; min-height: 0; padding-top: 92px; padding-bottom: 56px; }
-.signpage .sign::before { top: 58px; }
+.signpage .signup { margin-top: 0; min-height: 0; padding-top: 92px; padding-bottom: 56px; }
+.signpage .signup::before { top: 58px; }
+.signpage .info { min-height: 0; padding-top: 56px; padding-bottom: 56px; }
+.signpage .info.back { text-align: left; padding-bottom: 72px; }
+.signpage .info.back .button.go { margin-top: 4px; }
 @media (min-width: 900px) {
-  .signpage .sign { max-width: none; margin: 0; border-radius: 0; min-height: 100svh; padding-top: 120px; }
-  .signpage .sign::before { top: 64px; }
+  .signpage .signup { max-width: none; margin: 0; border-radius: 0; min-height: 100svh; padding-top: 120px; }
+  .signpage .signup::before { top: 64px; }
+  .signpage .info { min-height: 0; padding-top: 80px; padding-bottom: 96px; }
+  .signpage .info.back .inner { display: block; }
 }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 .signpage .say { margin-top: 0; }
 
 .exit-chip {
