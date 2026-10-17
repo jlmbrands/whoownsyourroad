@@ -14,7 +14,7 @@
   },
   "private": true,
   "engines": {
-    "node": ">=18"
+    "node": "22.x"
   },
   "devDependencies": {
     "@fontsource/overpass": "^5.3.0"
