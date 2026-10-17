@@ -223,21 +223,6 @@
     reveals.forEach(function (el) { el.classList.add("in"); });
   }
 
-  // ---- Topline color follows the sign at the top of the screen ----
-
-  var topline = document.querySelector(".topline");
-  var signs = document.querySelectorAll(".sign");
-  if (topline && signs.length && "IntersectionObserver" in window) {
-    var topObserver = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) {
-        if (e.isIntersecting) {
-          topline.classList.toggle("dark", /\b(yellow|white|orange)\b/.test(e.target.className));
-        }
-      });
-    }, { rootMargin: "0px 0px -92% 0px", threshold: 0 });
-    signs.forEach(function (sg) { topObserver.observe(sg); });
-  }
-
   // ---- Action pill: hide while the sign-up form is on screen ----
 
   var pill = document.querySelector(".pill");
