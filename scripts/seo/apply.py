@@ -10,7 +10,7 @@ import json, pathlib, re, html
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 PUB = ROOT / "public"
 SITE = "https://whoownsyourroad.com"
-IMG_VERSION = "v4"
+IMG_VERSION = "v5"
 SITE_NAME = "Who Owns Your Road"
 
 PAGES = {
@@ -29,7 +29,7 @@ PAGES = {
         description="Tell the Texas Legislature to cap surge tolls on private express lanes, open the books and vote before any new deal. Takes 60 seconds. Delivered January 12.",
         og_title="Add your name. Austin hears it January 12.",
         og_description="$24 for six miles, on roads our taxes built. Tell the Legislature to cap it. 60 seconds.",
-        image="home",
+        image="sign",
         type="website",
     ),
     "roads.html": dict(
@@ -114,7 +114,6 @@ ORG_LD = {
 
 def block(name, cfg):
     img = f"{SITE}/img/share-{cfg['image']}-{IMG_VERSION}.png"
-    sq = f"{SITE}/img/share-square-{IMG_VERSION}.png"
     url = SITE + cfg["path"]
     e = html.escape
     lines = [
@@ -141,10 +140,6 @@ def block(name, cfg):
         '<meta property="og:image:width" content="1200">',
         '<meta property="og:image:height" content="630">',
         f'<meta property="og:image:alt" content="{e(cfg["og_title"])}">',
-        f'<meta property="og:image" content="{sq}">',
-        '<meta property="og:image:type" content="image/png">',
-        '<meta property="og:image:width" content="1200">',
-        '<meta property="og:image:height" content="1200">',
         '<meta name="twitter:card" content="summary_large_image">',
         f'<meta name="twitter:title" content="{e(cfg["og_title"])}">',
         f'<meta name="twitter:description" content="{e(cfg["og_description"])}">',
