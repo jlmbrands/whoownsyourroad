@@ -2,40 +2,32 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#ffffff">
   <title>The Roads | Who Owns Your Road</title>
   <meta name="description" content="Ownership shares, public funding and contract terms for the NTE, NTE 35W and LBJ express lanes in Dallas-Fort Worth.">
   <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/css/site.css">
 </head>
-<body>
+<body class="page">
   <a class="skip" href="#main">Skip to content</a>
 
-  <header class="site-header">
-    <div class="inner">
-      <a class="wordmark" href="/">Who Owns Your Road</a>
-      <nav class="site-nav" aria-label="Main">
-        <ul>
-          <li><a href="/roads" aria-current="page">The roads</a></li>
-          <li><a href="/petition">Petition</a></li>
-          <li><a href="/write">Write your reps</a></li>
-          <li><a href="/sources">Sources</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+  <div class="topline">
+    <a href="/">Who Owns Your Road</a>
+    <a href="/#sign">Sign the petition</a>
+  </div>
 
-  <main id="main">
+  <main id="main" class="inner">
     <div class="page-head">
-      <h1>Three roads, one lead investor</h1>
+      <h1>Three roads, one lead investor.</h1>
       <p>Who owns each express lane concession in Dallas-Fort Worth, what the public put in, and how long the deal lasts.</p>
     </div>
 
-    <section class="section">
+    <section>
       <p class="legend"><span><i style="background:var(--amber)"></i>Investor based outside the US</span><span><i style="background:var(--green)"></i>Investor based in Texas</span></p>
 
       <!-- NTE -->
-      <article class="road" id="nte" style="margin-top:8px">
+      <article class="road" id="nte">
         <div class="road-head">
           <span class="shield">I-820</span><span class="shield">SH 121/183</span>
           <h2>North Tarrant Express</h2>
@@ -43,26 +35,26 @@
         <p class="road-where">About 13 miles from I-35W in north Fort Worth east to Euless. Operating since 2014. Run by NTE Mobility Partners.</p>
 
         <div class="table-wrap">
-          <table>
+          <table class="stack">
             <caption>Ownership</caption>
             <thead><tr><th scope="col">Investor</th><th scope="col" class="num">Share</th><th scope="col" style="width:45%"><span class="visually-hidden">Bar</span></th></tr></thead>
             <tbody>
-              <tr><td>Cintra (Ferrovial)</td><td class="num">62.9%</td><td><span class="bar foreign" style="width:62.9%"></span></td></tr>
-              <tr><td>Meridiam</td><td class="num">37.1%</td><td><span class="bar foreign" style="width:37.1%"></span></td></tr>
+              <tr><td data-label="Investor">Cintra (Ferrovial)</td><td class="num" data-label="Share">62.9%</td><td class="barcell" data-label="Bar"><span class="bar foreign" style="width:62.9%"></span></td></tr>
+              <tr><td data-label="Investor">Meridiam</td><td class="num" data-label="Share">37.1%</td><td class="barcell" data-label="Bar"><span class="bar foreign" style="width:37.1%"></span></td></tr>
             </tbody>
           </table>
         </div>
         <p class="fine">Cintra's 62.9% stake as reported in 2023.<sup><a href="/sources#s4">4</a></sup> The Dallas Police and Fire Pension System was a partner when the deal was signed but is not listed among the equity holders funding the current expansion.<sup><a href="/sources#s1">1</a></sup><sup><a href="/sources#s3">3</a></sup></p>
 
         <div class="table-wrap">
-          <table>
+          <table class="stack">
             <caption>How the original $2.05 billion was paid for<sup><a href="/sources#s2">2</a></sup></caption>
             <thead><tr><th scope="col">Source</th><th scope="col" class="num">Amount</th><th scope="col">Who repays it</th></tr></thead>
             <tbody>
-              <tr><td>TxDOT public funds</td><td class="num">$573M</td><td>Not repaid. A state grant.</td></tr>
-              <tr><td>Federal TIFIA loan</td><td class="num">$650M</td><td>Repaid from tolls</td></tr>
-              <tr><td>Private activity bonds</td><td class="num">$400M</td><td>Repaid from tolls</td></tr>
-              <tr><td>Investor equity</td><td class="num">$426M</td><td>Earns a return from tolls</td></tr>
+              <tr><td data-label="Source">TxDOT public funds</td><td class="num" data-label="Amount">$573M</td><td data-label="Who repays it">Not repaid. A state grant.</td></tr>
+              <tr><td data-label="Source">Federal TIFIA loan</td><td class="num" data-label="Amount">$650M</td><td data-label="Who repays it">Repaid from tolls</td></tr>
+              <tr><td data-label="Source">Private activity bonds</td><td class="num" data-label="Amount">$400M</td><td data-label="Who repays it">Repaid from tolls</td></tr>
+              <tr><td data-label="Source">Investor equity</td><td class="num" data-label="Amount">$426M</td><td data-label="Who repays it">Earns a return from tolls</td></tr>
             </tbody>
           </table>
         </div>
@@ -82,25 +74,25 @@
         <p class="road-where">About 17 miles from downtown Fort Worth north to Eagle Parkway near Alliance. Opened in stages from 2017 to 2023. Run by NTE Mobility Partners Segments 3.</p>
 
         <div class="table-wrap">
-          <table>
+          <table class="stack">
             <caption>Ownership<sup><a href="/sources#s5">5</a></sup></caption>
             <thead><tr><th scope="col">Investor</th><th scope="col" class="num">Share</th><th scope="col" style="width:45%"><span class="visually-hidden">Bar</span></th></tr></thead>
             <tbody>
-              <tr><td>Cintra (Ferrovial)</td><td class="num">53.7%</td><td><span class="bar foreign" style="width:53.7%"></span></td></tr>
-              <tr><td>APG</td><td class="num">28.8%</td><td><span class="bar foreign" style="width:28.8%"></span></td></tr>
-              <tr><td>Meridiam</td><td class="num">17.5%</td><td><span class="bar foreign" style="width:17.5%"></span></td></tr>
+              <tr><td data-label="Investor">Cintra (Ferrovial)</td><td class="num" data-label="Share">53.7%</td><td class="barcell" data-label="Bar"><span class="bar foreign" style="width:53.7%"></span></td></tr>
+              <tr><td data-label="Investor">APG</td><td class="num" data-label="Share">28.8%</td><td class="barcell" data-label="Bar"><span class="bar foreign" style="width:28.8%"></span></td></tr>
+              <tr><td data-label="Investor">Meridiam</td><td class="num" data-label="Share">17.5%</td><td class="barcell" data-label="Bar"><span class="bar foreign" style="width:17.5%"></span></td></tr>
             </tbody>
           </table>
         </div>
 
         <div class="table-wrap">
-          <table class="wide">
+          <table class="stack">
             <caption>How it was paid for</caption>
             <thead><tr><th scope="col">Segment</th><th scope="col">Public money</th><th scope="col">Private financing</th></tr></thead>
             <tbody>
-              <tr><td>3A: I-30 to north of I-820</td><td>$164M from TxDOT and the regional council of governments<sup><a href="/sources#s6">6</a></sup></td><td>$532M federal TIFIA loan and $274M in bonds, both repaid from tolls, plus investor equity<sup><a href="/sources#s6">6</a></sup></td></tr>
-              <tr><td>3B: north of I-820 to US 81/287</td><td>Built by TxDOT</td><td>None. The consortium operates and tolls it.<sup><a href="/sources#s6">6</a></sup><sup><a href="/sources#s7">7</a></sup></td></tr>
-              <tr><td>3C: to Eagle Parkway</td><td>None, per the operator<sup><a href="/sources#s5">5</a></sup></td><td>$160M equity and $750M in bonds<sup><a href="/sources#s8">8</a></sup></td></tr>
+              <tr><td data-label="Segment">3A: I-30 to north of I-820</td><td data-label="Public money">$164M from TxDOT and the regional council of governments<sup><a href="/sources#s6">6</a></sup></td><td data-label="Private financing">$532M federal TIFIA loan and $274M in bonds, both repaid from tolls, plus investor equity<sup><a href="/sources#s6">6</a></sup></td></tr>
+              <tr><td data-label="Segment">3B: north of I-820 to US 81/287</td><td data-label="Public money">Built by TxDOT</td><td data-label="Private financing">None. The consortium operates and tolls it.<sup><a href="/sources#s6">6</a></sup><sup><a href="/sources#s7">7</a></sup></td></tr>
+              <tr><td data-label="Segment">3C: to Eagle Parkway</td><td data-label="Public money">None, per the operator<sup><a href="/sources#s5">5</a></sup></td><td data-label="Private financing">$160M equity and $750M in bonds<sup><a href="/sources#s8">8</a></sup></td></tr>
             </tbody>
           </table>
         </div>
@@ -120,27 +112,27 @@
         <p class="road-where">About 17 miles of I-635 between I-35E and US 75, plus I-35E from Loop 12 to I-635 in Dallas. Opened in 2015. Run by LBJ Infrastructure Group.</p>
 
         <div class="table-wrap">
-          <table>
+          <table class="stack">
             <caption>Ownership at opening<sup><a href="/sources#s9">9</a></sup></caption>
             <thead><tr><th scope="col">Investor</th><th scope="col" class="num">Share</th><th scope="col" style="width:45%"><span class="visually-hidden">Bar</span></th></tr></thead>
             <tbody>
-              <tr><td>Cintra (Ferrovial)</td><td class="num">51.0%</td><td><span class="bar foreign" style="width:51%"></span></td></tr>
-              <tr><td>APG</td><td class="num">26.5%</td><td><span class="bar foreign" style="width:26.46%"></span></td></tr>
-              <tr><td>Meridiam</td><td class="num">15.9%</td><td><span class="bar foreign" style="width:15.94%"></span></td></tr>
-              <tr><td>Dallas Police and Fire Pension System</td><td class="num">6.6%</td><td><span class="bar" style="width:6.6%"></span></td></tr>
+              <tr><td data-label="Investor">Cintra (Ferrovial)</td><td class="num" data-label="Share">51.0%</td><td class="barcell" data-label="Bar"><span class="bar foreign" style="width:51%"></span></td></tr>
+              <tr><td data-label="Investor">APG</td><td class="num" data-label="Share">26.5%</td><td class="barcell" data-label="Bar"><span class="bar foreign" style="width:26.46%"></span></td></tr>
+              <tr><td data-label="Investor">Meridiam</td><td class="num" data-label="Share">15.9%</td><td class="barcell" data-label="Bar"><span class="bar foreign" style="width:15.94%"></span></td></tr>
+              <tr><td data-label="Investor">Dallas Police and Fire Pension System</td><td class="num" data-label="Share">6.6%</td><td class="barcell" data-label="Bar"><span class="bar" style="width:6.6%"></span></td></tr>
             </tbody>
           </table>
         </div>
 
         <div class="table-wrap">
-          <table>
+          <table class="stack">
             <caption>How it was paid for<sup><a href="/sources#s10">10</a></sup></caption>
             <thead><tr><th scope="col">Source</th><th scope="col" class="num">Amount</th><th scope="col">Who repays it</th></tr></thead>
             <tbody>
-              <tr><td>TxDOT capital contribution</td><td class="num">$490M</td><td>Not repaid. A state contribution.</td></tr>
-              <tr><td>Federal TIFIA loan</td><td class="num">$850M</td><td>Repaid from tolls</td></tr>
-              <tr><td>Private activity bonds</td><td class="num">$615M</td><td>Repaid from tolls</td></tr>
-              <tr><td>Investor equity</td><td class="num">$672M</td><td>Earns a return from tolls</td></tr>
+              <tr><td data-label="Source">TxDOT capital contribution</td><td class="num" data-label="Amount">$490M</td><td data-label="Who repays it">Not repaid. A state contribution.</td></tr>
+              <tr><td data-label="Source">Federal TIFIA loan</td><td class="num" data-label="Amount">$850M</td><td data-label="Who repays it">Repaid from tolls</td></tr>
+              <tr><td data-label="Source">Private activity bonds</td><td class="num" data-label="Amount">$615M</td><td data-label="Who repays it">Repaid from tolls</td></tr>
+              <tr><td data-label="Source">Investor equity</td><td class="num" data-label="Amount">$672M</td><td data-label="Who repays it">Earns a return from tolls</td></tr>
             </tbody>
           </table>
         </div>
@@ -151,7 +143,7 @@
       </article>
     </section>
 
-    <section class="section" id="pricing">
+    <section id="pricing">
       <div class="prose">
         <h2>How the price gets to $20</h2>
         <p>Toll prices on these lanes change with traffic and are recalculated every five minutes, around the clock.<sup><a href="/sources#s13">13</a></sup> The goal written into the contracts is to keep the toll lanes moving at a minimum of 50 mph. When NBC 5 DFW looked into a $24 posted toll on the NTE, the operator said there was a normal cap of about $1.06 per mile, but the contract with TxDOT lets prices go past it when needed to hold that speed.<sup><a href="/sources#s12">12</a></sup></p>
@@ -159,25 +151,25 @@
       </div>
 
       <div class="table-wrap" style="max-width:640px">
-        <table>
+        <table class="stack">
           <caption>Change in revenue per trip, 2025 vs 2024</caption>
           <thead><tr><th scope="col">Road</th><th scope="col" class="num">Change</th></tr></thead>
           <tbody>
-            <tr><td>NTE</td><td class="num">+13.4%</td></tr>
-            <tr><td>NTE 35W</td><td class="num">+11.6%</td></tr>
-            <tr><td>LBJ</td><td class="num">+8.7%</td></tr>
-            <tr><td>US inflation</td><td class="num">+2.9%</td></tr>
+            <tr><td data-label="Road">NTE</td><td class="num" data-label="Change">+13.4%</td></tr>
+            <tr><td data-label="Road">NTE 35W</td><td class="num" data-label="Change">+11.6%</td></tr>
+            <tr><td data-label="Road">LBJ</td><td class="num" data-label="Change">+8.7%</td></tr>
+            <tr><td data-label="Road">US inflation</td><td class="num" data-label="Change">+2.9%</td></tr>
           </tbody>
         </table>
       </div>
     </section>
 
-    <section class="section" id="fair">
+    <section id="fair">
       <div class="prose">
         <h2>What Texas got in return</h2>
         <p>A fair accounting has to include the other side. These deals rebuilt the free main lanes and frontage roads on all three corridors, years earlier than state funding alone would have. Investors carry the risk if traffic falls short, which matters: another Cintra-led toll road, SH 130 near Austin, went bankrupt when revenue missed projections.<sup><a href="/sources#s21">21</a></sup> The state shares in revenue above set levels, and the roads come back fully to TxDOT when the contracts end.<sup><a href="/sources#s1">1</a></sup><sup><a href="/sources#s6">6</a></sup></p>
         <p>The question is whether that trade still makes sense for drivers paying surge prices today, and what the public should be allowed to know and change for the next 35 years.</p>
-        <p><a class="button" href="/petition">See what we're asking for</a></p>
+        <p><a class="button" href="/#sign">See what we're asking for</a></p>
       </div>
     </section>
   </main>
@@ -185,7 +177,7 @@
   <footer class="site-footer">
     <div class="inner">
       <p>Who Owns Your Road is an independent project. It isn't affiliated with TxDOT, TEXpress Lanes, Ferrovial or any campaign.</p>
-      <p><a href="/sources">Sources</a> &nbsp; <a href="/about">About</a> &nbsp; <a href="/about#privacy">Privacy</a></p>
+      <p><a href="/roads">The roads</a> &nbsp; <a href="/write">Write your reps</a> &nbsp; <a href="/sources">Sources</a> &nbsp; <a href="/about">About</a> &nbsp; <a href="/about#privacy">Privacy</a></p>
     </div>
   </footer>
 </body>

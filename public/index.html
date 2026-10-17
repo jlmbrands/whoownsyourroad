@@ -2,176 +2,246 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Who Owns Your Road</title>
-  <meta name="description" content="Rush-hour tolls on DFW express lanes have hit $24. The lanes sit on state highways. Private investors set the price and keep the tolls until 2061. See who, and tell the Legislature to act.">
+  <meta name="description" content="One rush-hour trip on a DFW express lane has cost $24. The road is a Texas highway. Private investors keep the tolls until 2061. See who, and tell the Legislature to act.">
+  <meta name="theme-color" content="#141618">
   <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/css/site.css">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="$24 for one rush-hour trip on a road you already own">
-  <meta property="og:description" content="DFW's express lanes sit on state highways. Private investors set the price and keep the tolls until 2061. Who owns your road?">
+  <meta property="og:title" content="One trip. $24. On a road you already paid for.">
+  <meta property="og:description" content="DFW's express lanes are Texas highways. Private investors set the price and keep the tolls until 2061. Who owns your road?">
   <meta property="og:image" content="https://whoownsyourroad.com/img/share.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="$24 for one rush-hour trip on a road you already own">
+  <meta name="twitter:title" content="One trip. $24. On a road you already paid for.">
   <meta name="twitter:description" content="Private investors set the price and keep the tolls until 2061. Who owns your road?">
   <meta name="twitter:image" content="https://whoownsyourroad.com/img/share.png">
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
-
-  <header class="site-header">
-    <div class="inner">
-      <a class="wordmark" href="/">Who Owns Your Road</a>
-      <nav class="site-nav" aria-label="Main">
-        <ul>
-          <li><a href="/roads">The roads</a></li>
-          <li><a href="/petition">Petition</a></li>
-          <li><a href="/write">Write your reps</a></li>
-          <li><a href="/sources">Sources</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+  <div class="progress" aria-hidden="true"></div>
+  <div class="topline">
+    <a href="/">Who Owns Your Road</a>
+    <a href="/sources">Sources</a>
+  </div>
 
   <main id="main">
-    <section class="gantry">
+
+    <!-- 1. The gantry -->
+    <section class="sign gantry" aria-label="One trip costs twenty-four dollars">
       <div class="inner">
         <p class="gantry-label">Express lanes, rush hour</p>
         <div class="readout" data-readout data-to="24" role="img" aria-label="Toll sign reading 24 dollars"><div class="panel" data-panel><span class="visually-hidden">$24.00</span></div></div>
-        <h1>For one trip on a highway you already paid for.</h1>
-        <p class="lede">The express lanes on I-35W, I-820, SH 121/183 and LBJ sit on Texas state highways. Private investor groups set the price and keep the tolls until 2061. That's 35 more years. Here's who they are, what the state put in, and how to tell the Legislature it's time to act.</p>
-        <p class="actions">
-          <a class="button" href="/petition">Sign the petition</a>
-          <a class="button ghost" href="#share">Share this</a>
-        </p>
-        <p class="cite">$24 was posted on the SH 121/183 express lanes during rush hour, as reported by <a href="/sources#s12">NBC 5 DFW</a>. CBS Texas has reported <a href="/sources#s13">$20 tolls</a> on the same stretch.</p>
+        <h1 class="say">One trip. <span style="white-space:nowrap">Twenty-four</span> dollars.</h1>
+        <p class="sub">On a Fort Worth highway your taxes already paid for.</p>
+        <p class="note">$24 was the posted price on the SH 121/183 express lanes at rush hour, reported by <a href="/sources#s12">NBC 5 DFW</a>. CBS Texas has reported <a href="/sources#s13">$20</a> on the same stretch.</p>
+        <p class="cue" aria-hidden="true">Keep going</p>
       </div>
     </section>
-    <div class="lane" aria-hidden="true"></div>
 
-    <section class="section" id="bill">
-      <div class="calc" data-calc>
-        <div>
-          <h2>Your bill until 2061</h2>
-          <p>What do you spend on express lane tolls in a typical month? Check your toll tag statement, or guess.</p>
-          <label for="monthly">Tolls per month</label>
-          <div class="money">
-            <span>$</span>
-            <input type="text" id="monthly" inputmode="decimal" value="60" maxlength="6" autocomplete="off">
+    <!-- 2. Warning: who gets the money -->
+    <section class="sign yellow" aria-label="The money does not go to Texas">
+      <div class="inner">
+        <p class="marker"><span class="diamond"></span>Warning</p>
+        <h2 class="say reveal">The money doesn't go to Texas.</h2>
+        <p class="sub reveal d1">The express lanes on I-35W, I-820, SH 121/183 and LBJ are state highways. But private investors set the price and keep the tolls.</p>
+        <div class="split side reveal d2" role="img" aria-label="Who owns the company that runs the I-35W express lanes: Cintra 53.7 percent, APG 28.8 percent, Meridiam 17.5 percent">
+          <div class="track" aria-hidden="true">
+            <div class="seg a" style="width:53.7%"></div>
+            <div class="seg b" style="width:28.8%"></div>
+            <div class="seg c" style="width:17.5%"></div>
           </div>
-          <div class="presets" role="group" aria-label="Common amounts">
-            <button class="chip" type="button" data-amount="25">$25</button>
-            <button class="chip" type="button" data-amount="60">$60</button>
-            <button class="chip" type="button" data-amount="120">$120</button>
-            <button class="chip" type="button" data-amount="250">$250</button>
-          </div>
+          <ul aria-hidden="true">
+            <li><i style="background:var(--ink)"></i><span>Cintra <small>Part of Ferrovial. Spanish company, now based in Amsterdam</small></span><span>53.7%</span></li>
+            <li><i style="background:#4b514e"></i><span>APG <small>Dutch pension fund manager</small></span><span>28.8%</span></li>
+            <li><i style="background:#8a918d"></i><span>Meridiam <small>French investment fund</small></span><span>17.5%</span></li>
+          </ul>
         </div>
-        <div class="calc-out" aria-live="polite">
+        <p class="note">Owners of the company that runs the I-35W lanes.<sup><a href="/sources#s5">5</a></sup> The I-820, 183 and LBJ lanes have the same lead investor. <a href="/roads">All three roads</a></p>
+      </div>
+    </section>
+
+    <!-- 3. Guide: how long -->
+    <section class="sign green" aria-label="The deals last until 2061">
+      <div class="inner">
+        <p class="marker"><span class="bar"></span>Until</p>
+        <h2 class="say narrow reveal">2061.</h2>
+        <p class="sub reveal d1">That's how long the deals last. Thirty-five more years. Then the roads come back to Texas.</p>
+        <p class="note">TxDOT signed the contracts in 2009.<sup><a href="/sources#s1">1</a></sup><sup><a href="/sources#s10">10</a></sup> A kid starting kindergarten this fall will be 40 when they end.</p>
+      </div>
+    </section>
+
+    <!-- 4. Regulatory: the rules -->
+    <section class="sign white" aria-label="How the price gets so high">
+      <div class="inner">
+        <p class="marker"><span class="dot"></span>The rules</p>
+        <h2 class="say reveal">The price changes every 5 minutes.</h2>
+        <p class="sub reveal d1">The goal is to keep the toll lane moving at 50 mph. When traffic is heavy, the contract lets the price go past the normal cap. That's how one trip hits $20.<sup><a href="/sources#s12">12</a></sup><sup><a href="/sources#s13">13</a></sup></p>
+        <ul class="facts side reveal d2">
+          <li><strong>$1.06</strong><span>The normal cap, per mile<sup><a href="/sources#s12">12</a></sup></span></li>
+          <li><strong>+13%</strong><span>Rise in what each trip paid on the NTE in 2025. Inflation was 3%.<sup><a href="/sources#s15">15</a></sup></span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 5. Texas paid too -->
+    <section class="sign asphalt" aria-label="Texas paid too">
+      <div class="inner">
+        <p class="marker"><span class="dot"></span>And</p>
+        <h2 class="say reveal">Texas paid too.</h2>
+        <p class="sub reveal d1">About $1.2 billion in state and regional money went into these three deals, on top of federal loans.<sup><a href="/sources#s1">1</a></sup><sup><a href="/sources#s6">6</a></sup><sup><a href="/sources#s10">10</a></sup></p>
+        <p class="sub light reveal d2">One stretch of I-35W was built entirely with state money. The private company collects the tolls on it anyway.<sup><a href="/sources#s6">6</a></sup><sup><a href="/sources#s7">7</a></sup></p>
+      </div>
+    </section>
+
+    <!-- 6. Your number -->
+    <section class="sign white" id="bill" aria-label="Your bill until 2061">
+      <div class="inner calc" data-calc>
+        <p class="marker"><span class="dot"></span>Your number</p>
+        <h2 class="say wide">What will you pay by 2061?</h2>
+        <p class="sub light">Type what you spend on express lane tolls in a normal month. Guess if you need to.</p>
+        <label for="monthly">Tolls per month</label>
+        <div class="money">
+          <span>$</span>
+          <input type="text" id="monthly" inputmode="decimal" value="60" maxlength="6" autocomplete="off">
+        </div>
+        <div class="presets" role="group" aria-label="Common amounts">
+          <button class="chip" type="button" data-amount="25">$25</button>
+          <button class="chip" type="button" data-amount="60">$60</button>
+          <button class="chip" type="button" data-amount="120">$120</button>
+          <button class="chip" type="button" data-amount="250">$250</button>
+        </div>
+        <div class="calc-out side" aria-live="polite">
           <div class="big" data-calc-total role="img" aria-label="$0"></div>
-          <p class="explain">That's what you'd pay over the <strong><span data-calc-years>35</span> years</strong> left on the contracts, if prices never went up. Last year they rose 9 to 13 percent.<sup><a href="/sources#s15">15</a></sup></p>
-          <button class="button" type="button" data-calc-share>Share my number</button>
-          <p class="fine">Simple arithmetic: monthly tolls, times twelve, times the years to September 2061. Not adjusted for inflation or price increases, so it understates.</p>
+          <p class="explain">That's your bill over the <span data-calc-years>35</span> years left, if prices never go up. Last year they went up 9 to 13 percent.<sup><a href="/sources#s15">15</a></sup></p>
+          <button class="button amber" type="button" data-calc-share>Share my number</button>
+          <p class="fine">Monthly tolls, times twelve, times the years to September 2061. Not adjusted for inflation or increases, so the real number is higher.</p>
         </div>
       </div>
     </section>
 
-    <section class="section tight">
-      <div class="prose">
-        <h2>How a public road gets a private price</h2>
-        <p>Texas owns the land and the highway.<sup><a href="/sources#s11">11</a></sup> But in 2009 the state signed long contracts with private groups: they rebuilt the road, added toll lanes, and in exchange got the right to set prices and keep the tolls on those lanes for about fifty years.<sup><a href="/sources#s1">1</a></sup></p>
-        <p>The prices aren't fixed. They're recalculated every five minutes to keep the toll lanes moving at 50 mph, and the contracts let them go past the normal cap when traffic is heavy.<sup><a href="/sources#s12">12</a></sup><sup><a href="/sources#s13">13</a></sup> That's how one trip ends up costing more than $20.</p>
+    <!-- 7. Fairness -->
+    <section class="sign green" aria-label="To be fair">
+      <div class="inner">
+        <p class="marker"><span class="bar"></span>To be fair</p>
+        <h2 class="say reveal">It's not all bad.</h2>
+        <p class="sub reveal d1">The deals rebuilt the free lanes too, years before Texas could afford to. If traffic falls short, the investors lose money, not the state.<sup><a href="/sources#s1">1</a></sup><sup><a href="/sources#s21">21</a></sup></p>
+        <p class="sub light reveal d2">The question is whether drivers should keep paying surge prices for 35 more years with no limit and no view of where the money goes.</p>
       </div>
-
-      <ul class="figures">
-        <li><strong>$24</strong><span>Peak toll posted on the SH 121/183 express lanes at rush hour<sup><a href="/sources#s12">12</a></sup></span></li>
-        <li><strong>2061</strong><span>When the NTE, NTE 35W and LBJ contracts end<sup><a href="/sources#s4">4</a></sup><sup><a href="/sources#s7">7</a></sup><sup><a href="/sources#s10">10</a></sup></span></li>
-        <li><strong>$1.2B</strong><span>State and regional money put into the three deals, on top of federal loans<sup><a href="/sources#s1">1</a></sup><sup><a href="/sources#s6">6</a></sup><sup><a href="/sources#s10">10</a></sup></span></li>
-        <li><strong>+13.4%</strong><span>Rise in revenue per trip on NTE in 2025, against 2.9% inflation<sup><a href="/sources#s15">15</a></sup></span></li>
-      </ul>
     </section>
 
-    <section class="section tight">
-      <div class="prose">
-        <h2>Who's collecting</h2>
-        <p>Each road is run by its own company, owned by a small group of investors. The lead investor on all three is Cintra, the toll road arm of Ferrovial, now headquartered in Amsterdam.<sup><a href="/sources#s18">18</a></sup></p>
+    <!-- 8. Work zone: the asks -->
+    <section class="sign orange" id="asks" aria-label="What we are asking for">
+      <div class="inner">
+        <p class="marker"><span class="diamond"></span>Work ahead</p>
+        <h2 class="say wide reveal">The Legislature meets in <span data-days-to-session>87 days</span>.</h2>
+        <p class="sub reveal d1">We're asking Texas lawmakers for four things:</p>
+        <ol class="asks side reveal d2">
+          <li><div><h3>Cap the price</h3><p>A hard limit on surge tolls, written into state law. No exceptions in the contract.</p></div></li>
+          <li><div><h3>Open the books</h3><p>Every toll company publishes what it collects, what it spends, and what investors take home. Every year, every road.</p></div></li>
+          <li><div><h3>Price the exit</h3><p>TxDOT publishes what it would cost to end each contract early, so Texans can decide if it's worth it.</p></div></li>
+          <li><div><h3>No new deals without a vote</h3><p>Lawmakers must vote before TxDOT signs or extends any private toll contract.</p></div></li>
+        </ol>
       </div>
-
-      <div class="table-wrap">
-        <table class="wide">
-          <caption>Investors in the DFW express lane concessions</caption>
-          <thead>
-            <tr><th scope="col">Investor</th><th scope="col">What it is</th><th scope="col">Based in</th><th scope="col">Roads</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>Cintra (Ferrovial)</td><td>Toll road developer, lead partner</td><td>Netherlands, founded in Spain</td><td>NTE, NTE 35W, LBJ</td></tr>
-            <tr><td>Meridiam</td><td>Infrastructure investment fund</td><td>France</td><td>NTE, NTE 35W, LBJ</td></tr>
-            <tr><td>APG</td><td>Manager of Dutch pension money</td><td>Netherlands</td><td>NTE 35W, LBJ</td></tr>
-            <tr><td>Dallas Police and Fire Pension System</td><td>Public pension fund</td><td>Texas</td><td>LBJ</td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="callout">
-        <p><strong>This isn't about where the investors are from.</strong> They're mainstream investors from allied countries, and a Texas pension fund holds a stake in LBJ. The problem is the deal: a public highway, private control of the price, a fifty-year term, and almost no public reporting on what drivers pay or where it goes.</p>
-      </div>
-
-      <p><a class="button ghost dark" href="/roads">Ownership, funding and contract terms for each road</a></p>
     </section>
 
-    <div class="band">
-      <section class="section">
-        <div>
-          <h2>10,000 names before the Legislature opens</h2>
-          <p>The 90th Texas Legislature convenes January 12, 2027. We'll hand every member the signatures from their own district and four specific asks: cap surge tolls, open the books, price the buyout, and no new deals without a vote.</p>
-          <div class="goal">
-            <div class="nums"><strong data-sig-count>0</strong><span>of 10,000</span></div>
-            <div class="track" data-goal-bar role="progressbar" aria-valuemin="0" aria-valuemax="10000" aria-valuenow="0" aria-label="Signatures toward goal"><div class="fill" data-goal-fill></div></div>
+    <!-- 9. Sign -->
+    <section class="sign green" id="sign" aria-label="Add your name">
+      <div class="inner">
+        <p class="marker"><span class="bar"></span>Add your name</p>
+        <h2 class="say wide">10,000 names before the session opens.</h2>
+        <div class="goal">
+          <div class="nums"><strong data-sig-count>0</strong><span>of 10,000</span></div>
+          <div class="track" data-goal-bar role="progressbar" aria-valuemin="0" aria-valuemax="10000" aria-valuenow="0" aria-label="Signatures toward goal"><div class="fill" data-goal-fill></div></div>
+        </div>
+        <p class="countdown">Session opens January 12, 2027. We hand every legislator the names from their own district.</p>
+
+        <form class="petition side" id="petition-form" novalidate>
+          <div class="field-row">
+            <div class="field">
+              <label for="first_name">First name</label>
+              <input type="text" id="first_name" name="first_name" autocomplete="given-name" required maxlength="60">
+            </div>
+            <div class="field">
+              <label for="last_name">Last name</label>
+              <input type="text" id="last_name" name="last_name" autocomplete="family-name" required maxlength="60">
+            </div>
           </div>
-          <p class="countdown">Session opens in <strong data-days-to-session>87 days</strong>.</p>
-        </div>
-        <div>
-          <p><a class="button" href="/petition">Sign the petition</a></p>
-          <p><a class="button ghost" href="/write">Email your state reps</a></p>
-          <p>Takes about a minute. The letter is written; you add your name.</p>
-        </div>
-      </section>
-    </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" autocomplete="email" required maxlength="254">
+          </div>
+          <div class="field">
+            <label for="zip">ZIP code <span class="hint">So we can match you to your legislators</span></label>
+            <input type="text" id="zip" name="zip" inputmode="numeric" autocomplete="postal-code" pattern="\d{5}" required maxlength="5" style="max-width:9em">
+          </div>
+          <div class="field">
+            <label for="comment">Why this matters to you <span class="hint">Optional. We may share comments without your name.</span></label>
+            <textarea id="comment" name="comment" rows="2" maxlength="500"></textarea>
+          </div>
+          <div class="hp" aria-hidden="true">
+            <label for="website">Leave this empty</label>
+            <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+          </div>
+          <div class="check">
+            <input type="checkbox" id="wants_updates" name="wants_updates" value="1">
+            <label for="wants_updates">Email me when the petition is delivered and when bills come up</label>
+          </div>
+          <button class="button amber" type="submit">Sign the petition</button>
+          <p class="form-status" id="form-status" role="status"></p>
+          <p class="fine">Your name and ZIP may be shared with your own legislators. Your email is never shared or sold. <a href="/about#privacy">Privacy</a></p>
+        </form>
 
-    <section class="section" id="share">
-      <div class="prose">
-        <h2>Send it to someone who drives 35W</h2>
-        <p>Petitions move when people hear about them from friends, not from ads. Pick a button. The post is written; change it however you like.</p>
+        <div class="thanks side" id="thanks" hidden tabindex="-1">
+          <h3>You're on it.</h3>
+          <p id="thanks-body">Now do the two things that count most: tell your own legislators, and send this to a friend who drives these roads.</p>
+          <div class="actions">
+            <a class="button" href="/write">Email your reps</a>
+            <button class="button ghost" type="button" data-share="native" data-path="/">Share</button>
+            <button class="button ghost" type="button" data-share="sms" data-path="/">Text a friend</button>
+            <button class="button ghost" type="button" data-share="copy" data-path="/">Copy link</button>
+          </div>
+        </div>
       </div>
-      <div class="share-text">
-        <p>The express lanes on I-35W, 820, 183 and LBJ are state highways. Private investors set the price and keep the tolls until 2061. Rush-hour tolls have hit $24. Who owns your road?</p>
-      </div>
-      <div class="share-row">
-        <button class="share-btn" type="button" data-share="native"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 16a3 3 0 0 0-2.2 1l-7-4a3 3 0 0 0 0-2l7-4A3 3 0 1 0 15 5l.1.9-7 4a3 3 0 1 0 0 4.2l7 4V19a3 3 0 1 0 3-3z"/></svg>Share</button>
-        <button class="share-btn" type="button" data-share="sms"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3C6.5 3 2 6.6 2 11c0 2.4 1.3 4.5 3.4 6L4 21l5.3-2.2c.9.2 1.8.2 2.7.2 5.5 0 10-3.6 10-8s-4.5-8-10-8z"/></svg>Text a friend</button>
-        <button class="share-btn" type="button" data-share="x"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 3h3.1l-6.8 7.8L22 21h-6.3l-4.9-6.4L5.2 21H2.1l7.3-8.3L2 3h6.4l4.4 5.9L17.5 3zm-1.1 16.2h1.7L7 4.7H5.2l11.2 14.5z"/></svg>Post on X</button>
-        <button class="share-btn" type="button" data-share="facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 22v-8h2.7l.4-3.2h-3.1V8.8c0-.9.3-1.6 1.6-1.6h1.7V4.3c-.3 0-1.3-.1-2.5-.1-2.5 0-4.1 1.5-4.1 4.3v2.3H7.4V14h2.8v8h3.3z"/></svg>Facebook</button>
-        <button class="share-btn" type="button" data-share="threads"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.2 22c-3 0-5.3-1-6.9-3-1.4-1.8-2.1-4.2-2.2-7v-.1c.1-2.8.8-5.2 2.2-7C6.9 3 9.2 2 12.2 2c2.3 0 4.2.6 5.7 1.8 1.3 1.1 2.2 2.6 2.7 4.5l-2 .5c-.7-2.9-2.9-4.6-6.4-4.6-2.3 0-4 .7-5.2 2.2C5.9 7.8 5.3 9.8 5.2 12c.1 2.2.7 4.2 1.8 5.6 1.2 1.5 2.9 2.2 5.2 2.2 2.1 0 3.5-.5 4.6-1.6 1.2-1.2 1.2-2.7.8-3.6-.3-.6-.8-1.1-1.5-1.5-.2 1.4-.6 2.5-1.3 3.3-.9 1-2.2 1.6-3.8 1.7-1.2.1-2.4-.2-3.3-.8-1-.7-1.6-1.8-1.7-3-.1-1.2.4-2.3 1.3-3.1.9-.8 2.2-1.2 3.7-1.3.9 0 1.8 0 2.6.2 0-.7-.2-1.3-.6-1.7-.5-.5-1.2-.8-2.1-.8-1.3 0-2.3.5-2.9 1.4l-1.6-1.1c.9-1.4 2.5-2.2 4.5-2.2 1.5 0 2.7.5 3.6 1.4.8.8 1.2 1.9 1.3 3.3.1 0 .2.1.3.1 1.4.7 2.3 1.6 2.8 2.8.7 1.7.6 4.1-1.2 5.9-1.5 1.5-3.4 2.2-6 2.2zm-.8-10.2c-1.1.1-2.4.4-2.4 1.6 0 .6.3 1 .7 1.3.5.3 1.2.5 1.9.4 1.8-.1 2.7-1 3-3.1-.6-.2-1.3-.3-2-.3h-1.2z"/></svg>Threads</button>
-        <button class="share-btn" type="button" data-share="email"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm1 2.4V17h16V7.4l-8 5-8-5zM4.6 7l7.4 4.6L19.4 7H4.6z"/></svg>Email</button>
-        <button class="share-btn" type="button" data-share="copy"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3h11a1 1 0 0 1 1 1v12h-2V5H8V3zM4 7h11a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1zm1 2v10h9V9H5z"/></svg>Copy link</button>
+    </section>
+
+    <!-- 10. Services: share -->
+    <section class="sign blue" id="share" aria-label="Share this">
+      <div class="inner">
+        <p class="marker"><span class="dot"></span>Pass it on</p>
+        <h2 class="say wide reveal">Send it to someone who drives 35W.</h2>
+        <p class="sub light reveal d1">This is what they'll see. The post is written. Change it if you want.</p>
+        <div class="share-card side reveal d2"><img src="/img/share.png" width="1200" height="630" alt="Preview of the link: a toll sign reading $24.00 with the words One trip on a highway you already paid for" loading="lazy"></div>
+        <div class="share-row">
+          <button class="share-btn" type="button" data-share="native"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 16a3 3 0 0 0-2.2 1l-7-4a3 3 0 0 0 0-2l7-4A3 3 0 1 0 15 5l.1.9-7 4a3 3 0 1 0 0 4.2l7 4V19a3 3 0 1 0 3-3z"/></svg>Share</button>
+          <button class="share-btn" type="button" data-share="sms"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3C6.5 3 2 6.6 2 11c0 2.4 1.3 4.5 3.4 6L4 21l5.3-2.2c.9.2 1.8.2 2.7.2 5.5 0 10-3.6 10-8s-4.5-8-10-8z"/></svg>Text</button>
+          <button class="share-btn" type="button" data-share="x"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 3h3.1l-6.8 7.8L22 21h-6.3l-4.9-6.4L5.2 21H2.1l7.3-8.3L2 3h6.4l4.4 5.9L17.5 3zm-1.1 16.2h1.7L7 4.7H5.2l11.2 14.5z"/></svg>X</button>
+          <button class="share-btn" type="button" data-share="facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 22v-8h2.7l.4-3.2h-3.1V8.8c0-.9.3-1.6 1.6-1.6h1.7V4.3c-.3 0-1.3-.1-2.5-.1-2.5 0-4.1 1.5-4.1 4.3v2.3H7.4V14h2.8v8h3.3z"/></svg>Facebook</button>
+          <button class="share-btn" type="button" data-share="threads"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.2 22c-3 0-5.3-1-6.9-3-1.4-1.8-2.1-4.2-2.2-7v-.1c.1-2.8.8-5.2 2.2-7C6.9 3 9.2 2 12.2 2c2.3 0 4.2.6 5.7 1.8 1.3 1.1 2.2 2.6 2.7 4.5l-2 .5c-.7-2.9-2.9-4.6-6.4-4.6-2.3 0-4 .7-5.2 2.2C5.9 7.8 5.3 9.8 5.2 12c.1 2.2.7 4.2 1.8 5.6 1.2 1.5 2.9 2.2 5.2 2.2 2.1 0 3.5-.5 4.6-1.6 1.2-1.2 1.2-2.7.8-3.6-.3-.6-.8-1.1-1.5-1.5-.2 1.4-.6 2.5-1.3 3.3-.9 1-2.2 1.6-3.8 1.7-1.2.1-2.4-.2-3.3-.8-1-.7-1.6-1.8-1.7-3-.1-1.2.4-2.3 1.3-3.1.9-.8 2.2-1.2 3.7-1.3.9 0 1.8 0 2.6.2 0-.7-.2-1.3-.6-1.7-.5-.5-1.2-.8-2.1-.8-1.3 0-2.3.5-2.9 1.4l-1.6-1.1c.9-1.4 2.5-2.2 4.5-2.2 1.5 0 2.7.5 3.6 1.4.8.8 1.2 1.9 1.3 3.3.1 0 .2.1.3.1 1.4.7 2.3 1.6 2.8 2.8.7 1.7.6 4.1-1.2 5.9-1.5 1.5-3.4 2.2-6 2.2zm-.8-10.2c-1.1.1-2.4.4-2.4 1.6 0 .6.3 1 .7 1.3.5.3 1.2.5 1.9.4 1.8-.1 2.7-1 3-3.1-.6-.2-1.3-.3-2-.3h-1.2z"/></svg>Threads</button>
+          <button class="share-btn" type="button" data-share="email"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm1 2.4V17h16V7.4l-8 5-8-5zM4.6 7l7.4 4.6L19.4 7H4.6z"/></svg>Email</button>
+          <button class="share-btn" type="button" data-share="copy"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3h11a1 1 0 0 1 1 1v12h-2V5H8V3zM4 7h11a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1zm1 2v10h9V9H5z"/></svg>Copy link</button>
+        </div>
+        <p class="note">Want to go further? <a href="/write">Email your state rep and senator.</a> The letter is written. It takes a minute.</p>
       </div>
     </section>
   </main>
 
-  <div class="sticky-bar">
-    <a class="button" href="/petition">Sign</a>
-    <a class="button ghost" href="#share">Share</a>
-  </div>
+  <nav class="pill" aria-label="Quick actions">
+    <a class="primary" href="#sign">Sign</a>
+    <a href="#share">Share</a>
+  </nav>
 
   <footer class="site-footer">
     <div class="inner">
       <p>Who Owns Your Road is an independent project. It isn't affiliated with TxDOT, TEXpress Lanes, Ferrovial or any campaign.</p>
-      <p><a href="/sources">Sources</a> &nbsp; <a href="/about">About</a> &nbsp; <a href="/about#privacy">Privacy</a></p>
+      <p><a href="/roads">The roads in detail</a> &nbsp; <a href="/sources">Sources</a> &nbsp; <a href="/about">About</a> &nbsp; <a href="/about#privacy">Privacy</a></p>
     </div>
   </footer>
 
   <script src="/js/dotmatrix.js" defer></script>
   <script src="/js/site.js" defer></script>
+  <script src="/js/petition.js" defer></script>
 </body>
 </html>

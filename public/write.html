@@ -2,9 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Write Your Reps | Who Owns Your Road</title>
   <meta name="description" content="Email your Texas state representative and senator about surge tolls on private express lanes. The letter is written. You add your name.">
+  <meta name="theme-color" content="#ffffff">
   <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/css/site.css">
   <meta property="og:type" content="website">
@@ -14,91 +15,67 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://whoownsyourroad.com/img/share.png">
 </head>
-<body>
+<body class="page">
   <a class="skip" href="#main">Skip to content</a>
-
-  <header class="site-header">
-    <div class="inner">
-      <a class="wordmark" href="/">Who Owns Your Road</a>
-      <nav class="site-nav" aria-label="Main">
-        <ul>
-          <li><a href="/roads">The roads</a></li>
-          <li><a href="/petition">Petition</a></li>
-          <li><a href="/write" aria-current="page">Write your reps</a></li>
-          <li><a href="/sources">Sources</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <main id="main">
-    <div class="dark-head">
-      <div class="inner">
-        <h1>Email your state rep and senator. It takes a minute.</h1>
-        <p>A note from a voter in their own district is the thing legislators actually read. The letter below is written. Look up who represents you, add your name, and send it from your own email app.</p>
-      </div>
-    </div>
-    <div class="lane" aria-hidden="true"></div>
-
-    <section class="section">
-      <ol class="steps">
-        <li>
-          <div>
-            <h2>Find your two legislators</h2>
-            <p>Every Texan has one state representative and one state senator. The state's lookup tool takes an address and gives you their names and email links. It opens in a new tab.</p>
-            <p><a class="button green" href="https://wrm.capitol.texas.gov/" target="_blank" rel="noopener">Open Who Represents Me</a></p>
-            <p class="fine">Their email addresses follow a pattern: <code>firstname.lastname@house.texas.gov</code> for representatives and <code>firstname.lastname@senate.texas.gov</code> for senators. Each member's page on the lookup tool has a contact link if the pattern doesn't work.</p>
-          </div>
-        </li>
-        <li>
-          <div>
-            <h2>Add your name and where you live</h2>
-            <div class="field-row" style="max-width:560px">
-              <div class="field">
-                <label for="your-name">Your name</label>
-                <input type="text" id="your-name" autocomplete="name" maxlength="80">
-              </div>
-              <div class="field">
-                <label for="your-city">City or ZIP</label>
-                <input type="text" id="your-city" autocomplete="postal-code" maxlength="40">
-              </div>
-            </div>
-            <div class="field" style="max-width:560px">
-              <label for="to">Legislators' email addresses <span class="hint">Paste one or both, separated by a comma. Leave blank to fill in later.</span></label>
-              <input type="text" id="to" autocomplete="off" maxlength="200" placeholder="jane.doe@house.texas.gov, john.roe@senate.texas.gov">
-            </div>
-          </div>
-        </li>
-        <li>
-          <div>
-            <h2>Send the letter</h2>
-            <p>Edit anything you want. A line about your own commute makes it land harder.</p>
-            <div class="composer">
-              <label for="letter">Letter</label>
-              <textarea id="letter" spellcheck="true"></textarea>
-              <div class="row">
-                <button class="button" type="button" id="open-email">Open in my email app</button>
-                <button class="button ghost dark" type="button" id="copy-letter">Copy the letter</button>
-              </div>
-              <p class="fine" id="send-note">If nothing opens, your browser isn't linked to an email app. Copy the letter and paste it into Gmail, Outlook or whatever you use.</p>
-            </div>
-          </div>
-        </li>
-      </ol>
-    </section>
-
-    <section class="section tight">
-      <div class="prose">
-        <h2>Haven't signed yet?</h2>
-        <p>The letter is yours. The petition is everyone's. <a href="/petition">Add your name</a> so your legislators see how many neighbors agree.</p>
-      </div>
-    </section>
-  </main>
-
-  <div class="sticky-bar">
-    <a class="button" href="#open-email">Send the letter</a>
-    <a class="button ghost" href="/petition">Sign</a>
+  <div class="topline">
+    <a href="/">Who Owns Your Road</a>
+    <a href="/#sign">Sign the petition</a>
   </div>
+
+  <main id="main" class="inner">
+    <div class="page-head">
+      <h1>Email your state rep and senator.</h1>
+      <p>A note from a voter in their own district is the thing legislators actually read. The letter is written. You look up who represents you, add your name, and send it from your own email.</p>
+    </div>
+
+    <ol class="steps">
+      <li>
+        <div>
+          <h2>Find your two legislators</h2>
+          <p>Every Texan has one state representative and one state senator. The state's lookup takes your address and gives you their names and contact links. It opens in a new tab.</p>
+          <p><a class="button" href="https://wrm.capitol.texas.gov/" target="_blank" rel="noopener">Open Who Represents Me</a></p>
+          <p class="fine">Their emails usually follow a pattern: <code>firstname.lastname@house.texas.gov</code> for representatives, <code>firstname.lastname@senate.texas.gov</code> for senators. Each member's page has a contact link if that doesn't work.</p>
+        </div>
+      </li>
+      <li>
+        <div>
+          <h2>Add your name</h2>
+          <div class="field-row" style="max-width:560px">
+            <div class="field">
+              <label for="your-name">Your name</label>
+              <input type="text" id="your-name" autocomplete="name" maxlength="80">
+            </div>
+            <div class="field">
+              <label for="your-city">City or ZIP</label>
+              <input type="text" id="your-city" autocomplete="postal-code" maxlength="40">
+            </div>
+          </div>
+          <div class="field" style="max-width:560px">
+            <label for="to">Their email addresses <span class="hint">Paste one or both, separated by a comma. Or leave blank and add them in your email app.</span></label>
+            <input type="text" id="to" autocomplete="off" maxlength="200" placeholder="jane.doe@house.texas.gov, john.roe@senate.texas.gov">
+          </div>
+        </div>
+      </li>
+      <li>
+        <div>
+          <h2>Send it</h2>
+          <p>Change anything you like. A line about your own commute makes it land harder.</p>
+          <div class="composer">
+            <label for="letter">Letter</label>
+            <textarea id="letter" spellcheck="true"></textarea>
+            <div class="row">
+              <button class="button amber" type="button" id="open-email">Open in my email app</button>
+              <button class="button ghost" type="button" id="copy-letter">Copy the letter</button>
+            </div>
+            <p class="fine">If nothing opens, your browser isn't linked to an email app. Copy the letter and paste it into Gmail, Outlook or whatever you use.</p>
+          </div>
+        </div>
+      </li>
+    </ol>
+
+    <h2>Haven't signed yet?</h2>
+    <p>The letter is yours. The petition is everyone's. <a href="/#sign">Add your name</a> so your legislators see how many neighbors agree.</p>
+  </main>
 
   <footer class="site-footer">
     <div class="inner">

@@ -27,7 +27,6 @@ Then open http://localhost:3000.
 |-------------|-------------------------|
 | `/`         | `public/index.html`     |
 | `/roads`    | `public/roads.html`     |
-| `/petition` | `public/petition.html`  |
 | `/write`    | `public/write.html`     |
 | `/sources`  | `public/sources.html`   |
 | `/about`    | `public/about.html`     |
@@ -35,6 +34,9 @@ Then open http://localhost:3000.
 Footnote links point to `/sources#sN`. When you add a source, give it the next `id` in `sources.html`.
 
 ## Design notes
+
+- The home page is a vertical story told in road signs. Each `section.sign` is one screen; its color class (`yellow`, `green`, `white`, `orange`, `blue`, `asphalt`, `gantry`) follows US sign meanings: yellow warning, green guide, white regulatory, orange work zone, blue services.
+- The petition form lives on the home page (`#sign`). `/petition` redirects there.
 
 - Fonts are self-hosted in `public/fonts/` (Overpass, the open cut of Highway Gothic). No Google Fonts, no trackers.
 - The LED readouts are real dot matrices drawn by `public/js/dotmatrix.js`. `dotMatrix("$24.00")` returns an SVG string.

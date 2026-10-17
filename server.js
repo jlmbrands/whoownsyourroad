@@ -24,6 +24,8 @@ app.use((req, res, next) => {
   next();
 });
 
+app.get("/petition", (req, res) => res.redirect(301, "/#sign"));
+
 app.use(
   express.static(path.join(__dirname, "public"), {
     extensions: ["html"],

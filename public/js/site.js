@@ -179,9 +179,58 @@
     });
   });
 
-  // ---- Sticky bar on phones ----
+  // ---- Progress line ----
 
-  if (document.querySelector(".sticky-bar")) {
-    document.body.classList.add("has-sticky");
+  var progress = document.querySelector(".progress");
+  if (progress) {
+    var ticking = false;
+    function paint() {
+      var max = document.documentElement.scrollHeight - window.innerHeight;
+      progress.style.width = (max > 0 ? (window.scrollY / max) * 100 : 0) + "%";
+      ticking = false;
+    }
+    window.addEventListener("scroll", function () {
+      if (!ticking) { ticking = true; requestAnimationFrame(paint); }
+    }, { passive: true });
+    paint();
+  }
+
+  // ---- Reveal headlines as each sign comes into view (reader-paced) ----
+
+  var reveals = document.querySelectorAll(".reveal");
+  if (reveals.length && "IntersectionObserver" in window && !reduceMotion) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
+      });
+    }, { rootMargin: "0px 0px -12% 0px", threshold: 0.1 });
+    reveals.forEach(function (el) { io.observe(el); });
+  } else {
+    reveals.forEach(function (el) { el.classList.add("in"); });
+  }
+
+  // ---- Topline color follows the sign at the top of the screen ----
+
+  var topline = document.querySelector(".topline");
+  var signs = document.querySelectorAll(".sign");
+  if (topline && signs.length && "IntersectionObserver" in window) {
+    var topObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          topline.classList.toggle("dark", /\b(yellow|white|orange)\b/.test(e.target.className));
+        }
+      });
+    }, { rootMargin: "0px 0px -92% 0px", threshold: 0 });
+    signs.forEach(function (sg) { topObserver.observe(sg); });
+  }
+
+  // ---- Action pill: hide while the sign-up form is on screen ----
+
+  var pill = document.querySelector(".pill");
+  var signSection = document.getElementById("sign");
+  if (pill && signSection && "IntersectionObserver" in window) {
+    new IntersectionObserver(function (entries) {
+      pill.classList.toggle("hide", entries[0].isIntersecting);
+    }, { threshold: 0.25 }).observe(signSection);
   }
 })();
