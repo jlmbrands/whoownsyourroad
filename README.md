@@ -28,10 +28,18 @@ Then open http://localhost:3000.
 | `/`         | `public/index.html`     |
 | `/roads`    | `public/roads.html`     |
 | `/petition` | `public/petition.html`  |
+| `/write`    | `public/write.html`     |
 | `/sources`  | `public/sources.html`   |
 | `/about`    | `public/about.html`     |
 
 Footnote links point to `/sources#sN`. When you add a source, give it the next `id` in `sources.html`.
+
+## Design notes
+
+- Fonts are self-hosted in `public/fonts/` (Overpass, the open cut of Highway Gothic). No Google Fonts, no trackers.
+- The LED readouts are real dot matrices drawn by `public/js/dotmatrix.js`. `dotMatrix("$24.00")` returns an SVG string.
+- The social preview image is rendered from `scripts/og/share.html`. After changing it: `python3 scripts/og/render.py` (needs Playwright) and commit `public/img/share.png`.
+- Share texts and the session countdown live in `public/js/site.js`. The rep letter lives in `public/js/write.js`.
 
 ## Petition API
 
@@ -62,3 +70,5 @@ Everything database-related lives in `db.js`, which exports `addSignature`, `get
 - Set up the `hello@` contact address used on the About page
 - Re-check ownership shares and figures against the latest filings
 - Put the site behind HTTPS (the rate limiter trusts one proxy hop)
+- Most social networks need absolute `og:image` URLs, so set the real domain in those tags once it exists
+- Optional: a ZIP-to-legislator lookup (Open States or Cicero APIs, paid above a free tier) would let the write page address the email automatically

@@ -4,12 +4,19 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Who Owns Your Road</title>
-  <meta name="description" content="The express lanes on I-35W, I-820, SH 121/183 and LBJ are state highways. The tolls go to private investor groups until 2061. Here's who they are.">
+  <meta name="description" content="Rush-hour tolls on DFW express lanes have hit $24. The lanes sit on state highways. Private investors set the price and keep the tolls until 2061. See who, and tell the Legislature to act.">
   <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
   <link rel="stylesheet" href="/css/site.css">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="$24 for one rush-hour trip on a road you already own">
+  <meta property="og:description" content="DFW's express lanes sit on state highways. Private investors set the price and keep the tolls until 2061. Who owns your road?">
+  <meta property="og:image" content="/img/share.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="$24 for one rush-hour trip on a road you already own">
+  <meta name="twitter:description" content="Private investors set the price and keep the tolls until 2061. Who owns your road?">
+  <meta name="twitter:image" content="/img/share.png">
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -20,9 +27,9 @@
       <nav class="site-nav" aria-label="Main">
         <ul>
           <li><a href="/roads">The roads</a></li>
-          <li><a href="/petition">Sign the petition</a></li>
+          <li><a href="/petition">Petition</a></li>
+          <li><a href="/write">Write your reps</a></li>
           <li><a href="/sources">Sources</a></li>
-          <li><a href="/about">About</a></li>
         </ul>
       </nav>
     </div>
@@ -31,49 +38,68 @@
   <main id="main">
     <section class="gantry">
       <div class="inner">
-        <div class="sign" role="img" aria-label="Express lane sign showing a typical $8.70 toll on I-35W, a $24 peak toll reported on SH 121/183, and a contract end year of 2061">
-          <p class="sign-title" aria-hidden="true">Express lanes</p>
-          <dl class="sign-rows" aria-hidden="true">
-            <dt>I-35W, I-30 to US 287, typical</dt>
-            <dd>$8.70</dd>
-            <dt>SH 121/183, rush hour peak</dt>
-            <dd id="peak" data-to="24">$24.00</dd>
-            <dt>Contract ends</dt>
-            <dd>2061</dd>
-          </dl>
-          <p class="sign-note" aria-hidden="true">Posted prices as reported by CBS Texas and NBC 5 DFW.</p>
-        </div>
+        <p class="gantry-label">Express lanes, rush hour</p>
+        <div class="readout" data-readout data-to="24" role="img" aria-label="Toll sign reading 24 dollars"><div class="panel" data-panel><span class="visually-hidden">$24.00</span></div></div>
+        <h1>For one trip on a highway you already paid for.</h1>
+        <p class="lede">The express lanes on I-35W, I-820, SH 121/183 and LBJ sit on Texas state highways. Private investor groups set the price and keep the tolls until 2061. That's 35 more years. Here's who they are, what the state put in, and how to tell the Legislature it's time to act.</p>
+        <p class="actions">
+          <a class="button" href="/petition">Sign the petition</a>
+          <a class="button ghost" href="#share">Share this</a>
+        </p>
+        <p class="cite">$24 was posted on the SH 121/183 express lanes during rush hour, as reported by <a href="/sources#s12">NBC 5 DFW</a>. CBS Texas has reported <a href="/sources#s13">$20 tolls</a> on the same stretch.</p>
+      </div>
+    </section>
+    <div class="lane" aria-hidden="true"></div>
 
-        <h1>You pay the toll. A private consortium keeps it until 2061.</h1>
-        <p class="lede">The express lanes on I-35W, I-820, SH 121/183 and LBJ sit on state highways. The tolls go to investor groups led by Ferrovial, a company now based in Amsterdam, under contracts that run for roughly fifty years. Here's who they are, what the state put in, and what we're asking the Legislature to do.</p>
-        <a class="button" href="/petition">Sign the petition</a>
-        <a class="button secondary" href="/roads">See who owns each road</a>
+    <section class="section" id="bill">
+      <div class="calc" data-calc>
+        <div>
+          <h2>Your bill until 2061</h2>
+          <p>What do you spend on express lane tolls in a typical month? Check your toll tag statement, or guess.</p>
+          <label for="monthly">Tolls per month</label>
+          <div class="money">
+            <span>$</span>
+            <input type="text" id="monthly" inputmode="decimal" value="60" maxlength="6" autocomplete="off">
+          </div>
+          <div class="presets" role="group" aria-label="Common amounts">
+            <button class="chip" type="button" data-amount="25">$25</button>
+            <button class="chip" type="button" data-amount="60">$60</button>
+            <button class="chip" type="button" data-amount="120">$120</button>
+            <button class="chip" type="button" data-amount="250">$250</button>
+          </div>
+        </div>
+        <div class="calc-out" aria-live="polite">
+          <div class="big" data-calc-total role="img" aria-label="$0"></div>
+          <p class="explain">That's what you'd pay over the <strong><span data-calc-years>35</span> years</strong> left on the contracts, if prices never went up. Last year they rose 9 to 13 percent.<sup><a href="/sources#s15">15</a></sup></p>
+          <button class="button" type="button" data-calc-share>Share my number</button>
+          <p class="fine">Simple arithmetic: monthly tolls, times twelve, times the years to September 2061. Not adjusted for inflation or price increases, so it understates.</p>
+        </div>
       </div>
     </section>
 
-    <section class="section">
+    <section class="section tight">
       <div class="prose">
-        <h2>What you're actually paying for</h2>
-        <p>Texas owns the land and the highway.<sup><a href="/sources#s11">11</a></sup> But on these corridors, the state signed comprehensive development agreements: a private group rebuilt the road, added toll lanes, and in exchange earned the right to set prices and collect tolls on those lanes for decades.<sup><a href="/sources#s1">1</a></sup></p>
-        <p>The prices aren't fixed. They're recalculated every few minutes to keep the toll lanes moving at around 50 mph, and the contracts allow them to go above the normal cap when traffic is heavy.<sup><a href="/sources#s12">12</a></sup><sup><a href="/sources#s13">13</a></sup> That's how a short trip ends up costing more than $20.</p>
+        <h2>How a public road gets a private price</h2>
+        <p>Texas owns the land and the highway.<sup><a href="/sources#s11">11</a></sup> But in 2009 the state signed long contracts with private groups: they rebuilt the road, added toll lanes, and in exchange got the right to set prices and keep the tolls on those lanes for about fifty years.<sup><a href="/sources#s1">1</a></sup></p>
+        <p>The prices aren't fixed. They're recalculated every five minutes to keep the toll lanes moving at 50 mph, and the contracts let them go past the normal cap when traffic is heavy.<sup><a href="/sources#s12">12</a></sup><sup><a href="/sources#s13">13</a></sup> That's how one trip ends up costing more than $20.</p>
       </div>
 
       <ul class="figures">
-        <li><strong>$24</strong><span>Peak toll posted on the SH 121/183 express lanes during rush hour<sup><a href="/sources#s12">12</a></sup></span></li>
-        <li><strong>2061</strong><span>When the NTE, NTE 35W and LBJ contracts run out<sup><a href="/sources#s4">4</a></sup><sup><a href="/sources#s7">7</a></sup><sup><a href="/sources#s10">10</a></sup></span></li>
+        <li><strong>$24</strong><span>Peak toll posted on the SH 121/183 express lanes at rush hour<sup><a href="/sources#s12">12</a></sup></span></li>
+        <li><strong>2061</strong><span>When the NTE, NTE 35W and LBJ contracts end<sup><a href="/sources#s4">4</a></sup><sup><a href="/sources#s7">7</a></sup><sup><a href="/sources#s10">10</a></sup></span></li>
         <li><strong>$1.2B</strong><span>State and regional money put into the three deals, on top of federal loans<sup><a href="/sources#s1">1</a></sup><sup><a href="/sources#s6">6</a></sup><sup><a href="/sources#s10">10</a></sup></span></li>
         <li><strong>+13.4%</strong><span>Rise in revenue per trip on NTE in 2025, against 2.9% inflation<sup><a href="/sources#s15">15</a></sup></span></li>
       </ul>
     </section>
 
-    <section class="section">
+    <section class="section tight">
       <div class="prose">
         <h2>Who's collecting</h2>
-        <p>Each road is run by its own company, owned by a small group of investors. The lead investor on all three is Cintra, the toll road arm of Ferrovial.</p>
+        <p>Each road is run by its own company, owned by a small group of investors. The lead investor on all three is Cintra, the toll road arm of Ferrovial, now headquartered in Amsterdam.<sup><a href="/sources#s18">18</a></sup></p>
       </div>
 
       <div class="table-wrap">
-        <table>
+        <table class="wide">
           <caption>Investors in the DFW express lane concessions</caption>
           <thead>
             <tr><th scope="col">Investor</th><th scope="col">What it is</th><th scope="col">Based in</th><th scope="col">Roads</th></tr>
@@ -88,34 +114,64 @@
       </div>
 
       <div class="callout">
-        <p><strong>This isn't about where the investors are from.</strong> These are mainstream investors from allied countries, and a Texas pension fund holds a stake in LBJ. The problem is the arrangement: a public highway, private control over pricing, a fifty-year term, and very little public reporting on what drivers pay or where it goes.</p>
+        <p><strong>This isn't about where the investors are from.</strong> They're mainstream investors from allied countries, and a Texas pension fund holds a stake in LBJ. The problem is the deal: a public highway, private control of the price, a fifty-year term, and almost no public reporting on what drivers pay or where it goes.</p>
       </div>
 
-      <p><a href="/roads">Ownership shares, funding and contract terms for each road</a></p>
+      <p><a class="button ghost dark" href="/roads">Ownership, funding and contract terms for each road</a></p>
     </section>
 
     <div class="band">
       <section class="section">
         <div>
-          <h2>Ask the 90th Legislature to act</h2>
-          <p>Lawmakers return to Austin in January 2027. We're asking them to cap surge tolls, make these companies open their books, and price out what it would cost to end the contracts early.</p>
-          <p class="count" aria-live="polite"><strong id="sig-count">0</strong> people have signed so far</p>
+          <h2>10,000 names before the Legislature opens</h2>
+          <p>The 90th Texas Legislature convenes January 12, 2027. We'll hand every member the signatures from their own district and four specific asks: cap surge tolls, open the books, price the buyout, and no new deals without a vote.</p>
+          <div class="goal">
+            <div class="nums"><strong data-sig-count>0</strong><span>of 10,000</span></div>
+            <div class="track" data-goal-bar role="progressbar" aria-valuemin="0" aria-valuemax="10000" aria-valuenow="0" aria-label="Signatures toward goal"><div class="fill" data-goal-fill></div></div>
+          </div>
+          <p class="countdown">Session opens in <strong data-days-to-session>87 days</strong>.</p>
         </div>
         <div>
-          <p><a class="button" href="/petition">Read the asks and sign</a></p>
-          <p><a href="https://wrm.capitol.texas.gov/" rel="noopener">Find your state representative and senator</a></p>
+          <p><a class="button" href="/petition">Sign the petition</a></p>
+          <p><a class="button ghost" href="/write">Email your state reps</a></p>
+          <p>Takes about a minute. The letter is written; you add your name.</p>
         </div>
       </section>
     </div>
+
+    <section class="section" id="share">
+      <div class="prose">
+        <h2>Send it to someone who drives 35W</h2>
+        <p>Petitions move when people hear about them from friends, not from ads. Pick a button. The post is written; change it however you like.</p>
+      </div>
+      <div class="share-text">
+        <p>The express lanes on I-35W, 820, 183 and LBJ are state highways. Private investors set the price and keep the tolls until 2061. Rush-hour tolls have hit $24. Who owns your road?</p>
+      </div>
+      <div class="share-row">
+        <button class="share-btn" type="button" data-share="native"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 16a3 3 0 0 0-2.2 1l-7-4a3 3 0 0 0 0-2l7-4A3 3 0 1 0 15 5l.1.9-7 4a3 3 0 1 0 0 4.2l7 4V19a3 3 0 1 0 3-3z"/></svg>Share</button>
+        <button class="share-btn" type="button" data-share="sms"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3C6.5 3 2 6.6 2 11c0 2.4 1.3 4.5 3.4 6L4 21l5.3-2.2c.9.2 1.8.2 2.7.2 5.5 0 10-3.6 10-8s-4.5-8-10-8z"/></svg>Text a friend</button>
+        <button class="share-btn" type="button" data-share="x"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 3h3.1l-6.8 7.8L22 21h-6.3l-4.9-6.4L5.2 21H2.1l7.3-8.3L2 3h6.4l4.4 5.9L17.5 3zm-1.1 16.2h1.7L7 4.7H5.2l11.2 14.5z"/></svg>Post on X</button>
+        <button class="share-btn" type="button" data-share="facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 22v-8h2.7l.4-3.2h-3.1V8.8c0-.9.3-1.6 1.6-1.6h1.7V4.3c-.3 0-1.3-.1-2.5-.1-2.5 0-4.1 1.5-4.1 4.3v2.3H7.4V14h2.8v8h3.3z"/></svg>Facebook</button>
+        <button class="share-btn" type="button" data-share="threads"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.2 22c-3 0-5.3-1-6.9-3-1.4-1.8-2.1-4.2-2.2-7v-.1c.1-2.8.8-5.2 2.2-7C6.9 3 9.2 2 12.2 2c2.3 0 4.2.6 5.7 1.8 1.3 1.1 2.2 2.6 2.7 4.5l-2 .5c-.7-2.9-2.9-4.6-6.4-4.6-2.3 0-4 .7-5.2 2.2C5.9 7.8 5.3 9.8 5.2 12c.1 2.2.7 4.2 1.8 5.6 1.2 1.5 2.9 2.2 5.2 2.2 2.1 0 3.5-.5 4.6-1.6 1.2-1.2 1.2-2.7.8-3.6-.3-.6-.8-1.1-1.5-1.5-.2 1.4-.6 2.5-1.3 3.3-.9 1-2.2 1.6-3.8 1.7-1.2.1-2.4-.2-3.3-.8-1-.7-1.6-1.8-1.7-3-.1-1.2.4-2.3 1.3-3.1.9-.8 2.2-1.2 3.7-1.3.9 0 1.8 0 2.6.2 0-.7-.2-1.3-.6-1.7-.5-.5-1.2-.8-2.1-.8-1.3 0-2.3.5-2.9 1.4l-1.6-1.1c.9-1.4 2.5-2.2 4.5-2.2 1.5 0 2.7.5 3.6 1.4.8.8 1.2 1.9 1.3 3.3.1 0 .2.1.3.1 1.4.7 2.3 1.6 2.8 2.8.7 1.7.6 4.1-1.2 5.9-1.5 1.5-3.4 2.2-6 2.2zm-.8-10.2c-1.1.1-2.4.4-2.4 1.6 0 .6.3 1 .7 1.3.5.3 1.2.5 1.9.4 1.8-.1 2.7-1 3-3.1-.6-.2-1.3-.3-2-.3h-1.2z"/></svg>Threads</button>
+        <button class="share-btn" type="button" data-share="email"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm1 2.4V17h16V7.4l-8 5-8-5zM4.6 7l7.4 4.6L19.4 7H4.6z"/></svg>Email</button>
+        <button class="share-btn" type="button" data-share="copy"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3h11a1 1 0 0 1 1 1v12h-2V5H8V3zM4 7h11a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1zm1 2v10h9V9H5z"/></svg>Copy link</button>
+      </div>
+    </section>
   </main>
+
+  <div class="sticky-bar">
+    <a class="button" href="/petition">Sign</a>
+    <a class="button ghost" href="#share">Share</a>
+  </div>
 
   <footer class="site-footer">
     <div class="inner">
       <p>Who Owns Your Road is an independent project. It isn't affiliated with TxDOT, TEXpress Lanes, Ferrovial or any campaign.</p>
-      <p><a href="/sources">Sources</a> &nbsp; <a href="/about#privacy">Privacy</a></p>
+      <p><a href="/sources">Sources</a> &nbsp; <a href="/about">About</a> &nbsp; <a href="/about#privacy">Privacy</a></p>
     </div>
   </footer>
 
+  <script src="/js/dotmatrix.js" defer></script>
   <script src="/js/site.js" defer></script>
 </body>
 </html>

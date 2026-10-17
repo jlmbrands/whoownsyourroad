@@ -86,8 +86,14 @@
         if (data.ok) {
           if (data.counts && window.updateSignatureCount) window.updateSignatureCount(data.counts.total);
           if (data.is_texas === false) {
-            thanksBody.textContent = "Your name has been added. Your ZIP code is outside Texas, so we'll count you as a supporter rather than a constituent when we deliver it.";
+            thanksBody.textContent = "Your ZIP code is outside Texas, so we'll count you as a supporter rather than a constituent. You can still help by sending this to people who drive these roads.";
           }
+          try {
+            localStorage.setItem("woyr_signer", JSON.stringify({
+              name: payload.first_name + " " + payload.last_name,
+              zip: payload.zip
+            }));
+          } catch (err) { /* private mode */ }
           form.hidden = true;
           thanks.hidden = false;
           thanks.focus();
