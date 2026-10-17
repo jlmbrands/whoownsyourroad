@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sign the Petition | Who Owns Your Road</title>
+  <meta name="description" content="Ask the 90th Texas Legislature to cap surge tolls, open the books on private toll concessions, and price out ending the contracts early.">
+  <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
+  <link rel="stylesheet" href="/css/site.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="inner">
+      <a class="wordmark" href="/">Who Owns Your Road</a>
+      <nav class="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="/roads">The roads</a></li>
+          <li><a href="/petition" aria-current="page">Sign the petition</a></li>
+          <li><a href="/sources">Sources</a></li>
+          <li><a href="/about">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="page-head">
+      <h1>A petition to the 90th Texas Legislature</h1>
+      <p>Lawmakers convene in Austin in January 2027. Signatures are grouped by ZIP code so we can show each legislator how many of their own constituents signed.</p>
+    </div>
+
+    <section class="section">
+      <div class="prose">
+        <p>To the members of the Texas House and Senate:</p>
+        <p>The express lanes on I-35W, I-820, SH 121/183, I-635 and I-35E are on state highways, but private concession companies set the prices and keep the tolls until 2061. Rush-hour tolls on these lanes have been posted above $20.<sup><a href="/sources#s12">12</a></sup><sup><a href="/sources#s13">13</a></sup> Drivers deserve limits on what they can be charged and a clear view of where that money goes. We ask you to:</p>
+      </div>
+
+      <ul class="asks">
+        <li>
+          <h3>Put a hard ceiling on surge tolls</h3>
+          <p>Set a maximum per-mile toll in state law for privately operated managed lanes, with no contract exception that lets prices run past it.</p>
+        </li>
+        <li>
+          <h3>Open the books</h3>
+          <p>Require each concession company to publish yearly toll revenue, operating costs, debt payments, payouts to investors, and the share returned to the state, for each road.</p>
+        </li>
+        <li>
+          <h3>Price the exit</h3>
+          <p>Direct TxDOT to publish what it would cost to end each contract early, so the public can weigh a buyback against 35 more years of private tolling.</p>
+        </li>
+        <li>
+          <h3>No new deals without a vote</h3>
+          <p>Require a recorded vote of the Legislature before TxDOT signs or extends any private toll concession on a state highway.</p>
+        </li>
+      </ul>
+    </section>
+
+    <div class="band" id="sign">
+      <section class="section">
+        <div>
+          <h2>Add your name</h2>
+          <p>Your name and ZIP code may be shared with your own state legislators when we deliver the petition. Your email is never shared or sold.</p>
+          <p class="count" aria-live="polite"><strong id="sig-count">0</strong> people have signed so far</p>
+          <p>Want to go further? <a href="https://wrm.capitol.texas.gov/" rel="noopener">Look up your state representative and senator</a> and tell them directly.</p>
+        </div>
+
+        <div>
+          <form class="petition" id="petition-form" novalidate>
+            <div class="field-row">
+              <div class="field">
+                <label for="first_name">First name</label>
+                <input type="text" id="first_name" name="first_name" autocomplete="given-name" required maxlength="60">
+              </div>
+              <div class="field">
+                <label for="last_name">Last name</label>
+                <input type="text" id="last_name" name="last_name" autocomplete="family-name" required maxlength="60">
+              </div>
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" autocomplete="email" required maxlength="254">
+            </div>
+            <div class="field">
+              <label for="zip">ZIP code <span class="hint">Used to match you with your legislators</span></label>
+              <input type="text" id="zip" name="zip" inputmode="numeric" autocomplete="postal-code" pattern="\d{5}" required maxlength="5" style="max-width:9em">
+            </div>
+            <div class="field">
+              <label for="comment">Why this matters to you <span class="hint">Optional. We may share comments without your name.</span></label>
+              <textarea id="comment" name="comment" rows="3" maxlength="500"></textarea>
+            </div>
+            <div class="hp" aria-hidden="true">
+              <label for="website">Leave this empty</label>
+              <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+            </div>
+            <div class="check">
+              <input type="checkbox" id="wants_updates" name="wants_updates" value="1">
+              <label for="wants_updates">Email me when the petition is delivered and when bills on this come up</label>
+            </div>
+            <button class="button" type="submit">Sign the petition</button>
+            <p class="form-status" id="form-status" role="status"></p>
+            <p class="fine">By signing you agree to our <a href="/about#privacy">privacy policy</a>.</p>
+          </form>
+
+          <div class="thanks" id="thanks" hidden tabindex="-1">
+            <h3>Signed. Thank you.</h3>
+            <p id="thanks-body">Your name has been added to the petition.</p>
+            <p><a href="https://wrm.capitol.texas.gov/" rel="noopener">Find your legislators</a> and send them a note too. It carries more weight coming from you.</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="inner">
+      <p>Who Owns Your Road is an independent project. It isn't affiliated with TxDOT, TEXpress Lanes, Ferrovial or any campaign.</p>
+      <p><a href="/sources">Sources</a> &nbsp; <a href="/about#privacy">Privacy</a></p>
+    </div>
+  </footer>
+
+  <script src="/js/site.js" defer></script>
+  <script src="/js/petition.js" defer></script>
+</body>
+</html>

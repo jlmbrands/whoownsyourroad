@@ -1,0 +1,19 @@
+{
+  "name": "whoownsyourroad",
+  "version": "0.1.0",
+  "description": "Who Owns Your Road: who controls Texas toll lanes, plus a petition to the Legislature",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "export": "node scripts/export-signatures.js"
+  },
+  "dependencies": {
+    "better-sqlite3": "^13.0.3",
+    "express": "^5.3.0"
+  },
+  "private": true,
+  "engines": {
+    "node": ">=18"
+  }
+}
