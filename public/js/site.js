@@ -18,8 +18,13 @@
 
   // ---- Signature count and goal ----
 
+  var SHOW_COUNT_AT = 100;
+
   window.updateSignatureCount = function (total) {
     total = Number(total || 0);
+    document.querySelectorAll("[data-goal]").forEach(function (g) {
+      g.classList.toggle("low", total < SHOW_COUNT_AT);
+    });
     document.querySelectorAll("[data-sig-count]").forEach(function (el) {
       el.textContent = fmt(total);
     });
@@ -40,9 +45,16 @@
 
   // ---- Countdown to session ----
 
+  var daysLeft = Math.ceil((SESSION_OPENS - new Date()) / 86400000);
   document.querySelectorAll("[data-days-to-session]").forEach(function (el) {
-    var days = Math.max(0, Math.ceil((SESSION_OPENS - new Date()) / 86400000));
-    el.textContent = days === 1 ? "1 day" : fmt(days) + " days";
+    if (daysLeft <= 0) {
+      el.textContent = "now";
+    } else {
+      el.textContent = daysLeft === 1 ? "1 day" : fmt(daysLeft) + " days";
+    }
+  });
+  document.querySelectorAll("[data-session-line]").forEach(function (el) {
+    if (daysLeft <= 0) el.textContent = "The session is open.";
   });
 
   // ---- Hero readout: counts up from the per-mile cap to the posted peak ----
@@ -52,6 +64,8 @@
     var to = Number(readout.getAttribute("data-to")) || 24;
     var from = 1.06;
     var panel = readout.querySelector("[data-panel]");
+    var hov = readout.querySelector("[data-panel-hov]");
+    if (hov) hov.innerHTML = window.dotMatrix("$12.00");
     function show(v) { panel.innerHTML = window.dotMatrix("$" + v.toFixed(2)); }
     if (reduceMotion) {
       show(to);

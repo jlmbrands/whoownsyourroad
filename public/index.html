@@ -7,7 +7,7 @@
   <meta name="description" content="One rush-hour trip on a DFW express lane has cost $24. The road is a Texas highway. Private investors keep the tolls until 2061. See who, and tell the Legislature to act.">
   <meta name="theme-color" content="#141618">
   <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="/css/site.css?v=20261017b">
+  <link rel="stylesheet" href="/css/site.css?v=20261017c">
   <meta property="og:type" content="website">
   <meta property="og:title" content="One trip. $24. On a road you already paid for.">
   <meta property="og:description" content="DFW's express lanes are Texas highways. Private investors set the price and keep the tolls until 2061. Who owns your road?">
@@ -30,14 +30,33 @@
   <main id="main">
 
     <!-- 1. The gantry -->
-    <section class="sign gantry" aria-label="One trip costs twenty-four dollars">
+    <section class="sign gantry" aria-label="Twenty-four dollars for about six miles">
       <div class="inner">
-        <p class="gantry-label">Express lanes, rush hour</p>
-        <div class="readout" data-readout data-to="24" role="img" aria-label="Toll sign reading 24 dollars"><div class="panel" data-panel><span class="visually-hidden">$24.00</span></div></div>
-        <h1 class="say">One trip. <span style="white-space:nowrap">Twenty-four</span> dollars.</h1>
-        <p class="sub">On a Fort Worth highway your taxes already paid for.</p>
-        <p class="note">$24 was the posted price on the SH 121/183 express lanes at rush hour, reported by <a href="/sources#s12">NBC 5 DFW</a>. CBS Texas has reported <a href="/sources#s13">$20</a> on the same stretch.</p>
+        <p class="gantry-label">Express lanes, Loop 820 east, rush hour</p>
+        <div class="readout" data-readout data-to="24" role="img" aria-label="Toll sign reading 12 dollars for carpools and 24 dollars for everyone else">
+          <div class="panel">
+            <div class="row"><span class="lbl">HOV 2+</span><div class="mx small" data-panel-hov></div></div>
+            <div class="row"><span class="lbl">TollTag</span><div class="mx" data-panel><span class="visually-hidden">$24.00</span></div></div>
+          </div>
+        </div>
+        <h1 class="say">Twenty-four dollars. About six miles.</h1>
+        <p class="sub">Drivers photographed this price on Loop 820 in Fort Worth twice this year. Another sign on the same network showed $20.65 for about three miles.</p>
+        <p class="note">Posted prices photographed by DFW drivers on April 22 and October 2026.<sup><a href="/sources#s23">23</a></sup> NBC 5 and CBS Texas have reported $24 and $20 on these lanes.<sup><a href="/sources#s12">12</a></sup><sup><a href="/sources#s13">13</a></sup></p>
         <p class="cue" aria-hidden="true">Keep going</p>
+      </div>
+    </section>
+
+    <!-- 1b. Receipts -->
+    <section class="sign asphalt" id="receipts" aria-label="Real receipts">
+      <div class="inner">
+        <p class="marker"><span class="dot"></span>Real receipts</p>
+        <h2 class="say wide reveal">Seventeen minutes. $93.70.</h2>
+        <p class="sub reveal d1">One driver's toll bill for three weeks in 2025: five short express-lane trips on I-35W and 820 added up to $93.70 for 17 minutes of driving.<sup><a href="/sources#s24">24</a></sup></p>
+        <ul class="facts side reveal d2">
+          <li><strong>$38</strong><span>for about 12 miles of express lanes around North Dallas, October 2026<sup><a href="/sources#s24">24</a></sup></span></li>
+          <li><strong>$20.65</strong><span>for a stretch a driver measured at about three miles, October 2026<sup><a href="/sources#s23">23</a></sup></span></li>
+        </ul>
+        <p class="note">Got a worse one? <a href="mailto:hello@whoownsyourroad.com?subject=My%20toll%20receipt">Send us your receipt</a> and we'll add it, with your name or without.</p>
       </div>
     </section>
 
@@ -82,17 +101,9 @@
         <ul class="facts side reveal d2">
           <li><strong>$1.06</strong><span>The normal cap, per mile<sup><a href="/sources#s12">12</a></sup></span></li>
           <li><strong>+13%</strong><span>Rise in what each trip paid on the NTE in 2025. Inflation was 3%.<sup><a href="/sources#s15">15</a></sup></span></li>
+          <li><strong>$1.2B</strong><span>State and regional money that went into the deals, on top of federal loans<sup><a href="/sources#s1">1</a></sup><sup><a href="/sources#s6">6</a></sup><sup><a href="/sources#s10">10</a></sup></span></li>
+          <li><strong>$0</strong><span>What the private company paid to build one I-35W stretch it now collects tolls on. The state built it.<sup><a href="/sources#s6">6</a></sup></span></li>
         </ul>
-      </div>
-    </section>
-
-    <!-- 5. Texas paid too -->
-    <section class="sign asphalt" aria-label="Texas paid too">
-      <div class="inner">
-        <p class="marker"><span class="dot"></span>And</p>
-        <h2 class="say reveal">Texas paid too.</h2>
-        <p class="sub reveal d1">About $1.2 billion in state and regional money went into these three deals, on top of federal loans.<sup><a href="/sources#s1">1</a></sup><sup><a href="/sources#s6">6</a></sup><sup><a href="/sources#s10">10</a></sup></p>
-        <p class="sub light reveal d2">One stretch of I-35W was built entirely with state money. The private company collects the tolls on it anyway.<sup><a href="/sources#s6">6</a></sup><sup><a href="/sources#s7">7</a></sup></p>
       </div>
     </section>
 
@@ -122,16 +133,6 @@
       </div>
     </section>
 
-    <!-- 7. Fairness -->
-    <section class="sign green" aria-label="To be fair">
-      <div class="inner">
-        <p class="marker"><span class="bar"></span>To be fair</p>
-        <h2 class="say reveal">It's not all bad.</h2>
-        <p class="sub reveal d1">The deals rebuilt the free lanes too, years before Texas could afford to. If traffic falls short, the investors lose money, not the state.<sup><a href="/sources#s1">1</a></sup><sup><a href="/sources#s21">21</a></sup></p>
-        <p class="sub light reveal d2">The question is whether drivers should keep paying surge prices for 35 more years with no limit and no view of where the money goes.</p>
-      </div>
-    </section>
-
     <!-- 8. Work zone: the asks -->
     <section class="sign orange" id="asks" aria-label="What we are asking for">
       <div class="inner">
@@ -144,6 +145,7 @@
           <li><div><h3>Price the exit</h3><p>TxDOT publishes what it would cost to end each contract early, so Texans can decide if it's worth it.</p></div></li>
           <li><div><h3>No new deals without a vote</h3><p>Lawmakers must vote before TxDOT signs or extends any private toll contract.</p></div></li>
         </ol>
+        <p class="note">To be fair: the deals rebuilt the free lanes too, and if traffic falls short the investors lose money, not the state.<sup><a href="/sources#s1">1</a></sup><sup><a href="/sources#s21">21</a></sup> None of that requires 35 more years with no price limit and no public books.</p>
       </div>
     </section>
 
@@ -152,11 +154,12 @@
       <div class="inner">
         <p class="marker"><span class="bar"></span>Add your name</p>
         <h2 class="say wide">10,000 names before the session opens.</h2>
-        <div class="goal">
+        <div class="goal low" data-goal>
+          <p class="first">Be one of the first 100.</p>
           <div class="nums"><strong data-sig-count>0</strong><span>of 10,000</span></div>
           <div class="track" data-goal-bar role="progressbar" aria-valuemin="0" aria-valuemax="10000" aria-valuenow="0" aria-label="Signatures toward goal"><div class="fill" data-goal-fill></div></div>
         </div>
-        <p class="countdown">Session opens January 12, 2027. We hand every legislator the names from their own district.</p>
+        <p class="countdown"><span data-session-line>Session opens January 12, 2027.</span> We hand every legislator the names from their own district.</p>
 
         <form class="petition side" id="petition-form" novalidate>
           <div class="field-row">
@@ -240,8 +243,8 @@
     </div>
   </footer>
 
-  <script src="/js/dotmatrix.js?v=20261017b" defer></script>
-  <script src="/js/site.js?v=20261017b" defer></script>
-  <script src="/js/petition.js?v=20261017b" defer></script>
+  <script src="/js/dotmatrix.js?v=20261017c" defer></script>
+  <script src="/js/site.js?v=20261017c" defer></script>
+  <script src="/js/petition.js?v=20261017c" defer></script>
 </body>
 </html>

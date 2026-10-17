@@ -226,7 +226,11 @@ li { margin-bottom: 0.4em; }
   box-shadow: inset 0 0 0 2px #000, 0 2px 0 #000;
 }
 
-.readout svg { width: 100%; height: auto; filter: drop-shadow(0 0 6px var(--amber-glow)); }
+.readout .row { display: grid; grid-template-columns: minmax(64px, 18%) 1fr; align-items: center; gap: 12px; }
+.readout .row + .row { margin-top: clamp(8px, 1.6vw, 14px); }
+.readout .lbl { font-weight: 800; font-size: clamp(0.8rem, 2.2vw, 1.2rem); color: #e8e8e8; line-height: 1.05; padding-top: 3px; }
+.readout .mx svg { width: 100%; height: auto; filter: drop-shadow(0 0 6px var(--amber-glow)); }
+.readout .mx.small svg { width: 76%; }
 
 /* ---------- Reveal: one small, reader-controlled motion ---------- */
 
@@ -351,6 +355,9 @@ li { margin-bottom: 0.4em; }
 .goal .track { height: 16px; background: rgba(0, 0, 0, 0.25); border-radius: 4px; margin-top: 10px; overflow: hidden; border: 2px solid rgba(255,255,255,0.6); }
 .goal .fill { height: 100%; background: var(--amber); width: 0; min-width: 6px; transition: width 900ms ease-out; }
 .countdown { font-size: 1.1rem; font-weight: 600; margin: 14px 0 0; }
+.goal .first { display: none; font-weight: 900; font-size: clamp(1.6rem, 5vw, 2.4rem); line-height: 1.05; margin: 0; }
+.goal.low .first { display: block; }
+.goal.low .nums, .goal.low .track { display: none; }
 
 /* ---------- Forms ---------- */
 
@@ -515,3 +522,5 @@ ol.sources .src-note { display: block; color: var(--muted); }
   table.stack td[data-label="Segment"] { font-weight: 900; font-size: 1.1rem; }
   table.stack .bar { height: 14px; }
 }
+
+.sign sup a { color: inherit; opacity: 0.75; }
