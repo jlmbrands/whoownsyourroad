@@ -26,10 +26,19 @@ app.use((req, res, next) => {
 
 app.get("/petition", (req, res) => res.redirect(301, "/#sign"));
 
+// HTML is never cached; versioned assets (?v=) are cached for a year.
 app.use(
   express.static(path.join(__dirname, "public"), {
     extensions: ["html"],
-    maxAge: "1h",
+    setHeaders(res, filePath) {
+      if (filePath.endsWith(".html")) {
+        res.set("Cache-Control", "no-cache");
+      } else if (/\.(css|js)$/.test(filePath)) {
+        res.set("Cache-Control", "public, max-age=31536000, immutable");
+      } else {
+        res.set("Cache-Control", "public, max-age=86400");
+      }
+    },
   })
 );
 

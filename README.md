@@ -43,6 +43,10 @@ Footnote links point to `/sources#sN`. When you add a source, give it the next `
 - The social preview image is rendered from `scripts/og/share.html`. After changing it: `python3 scripts/og/render.py` (needs Playwright) and commit `public/img/share.png`.
 - Share texts and the session countdown live in `public/js/site.js`. The rep letter lives in `public/js/write.js`.
 
+## Cache busting
+
+HTML is served with `no-cache`; CSS and JS are cached for a year. When you change `site.css` or any file in `js/`, bump the `?v=` value on every `<link>` and `<script>` tag in `public/*.html` (one find-and-replace), or browsers will keep the old file.
+
 ## Petition API
 
 - `GET /api/petition/count` returns `{ total, texas }`
