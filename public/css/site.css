@@ -531,9 +531,9 @@ ol.sources .src-note { display: block; color: var(--muted); }
 .sign.exitzone .marker { justify-content: center; }
 
 /* Lane lines rushing toward you */
-.road { position: absolute; left: 0; right: 0; bottom: 0; height: 52%; perspective: 340px; overflow: hidden; z-index: 0; pointer-events: none;
+.exit-road { position: absolute; left: 0; right: 0; bottom: 0; height: 52%; perspective: 340px; overflow: hidden; z-index: 0; pointer-events: none;
   -webkit-mask-image: linear-gradient(to top, #000 35%, transparent); mask-image: linear-gradient(to top, #000 35%, transparent); }
-.road::before {
+.exit-road::before {
   content: ""; position: absolute; left: 50%; bottom: 0; width: 170%; height: 260%;
   transform: translateX(-50%) rotateX(72deg); transform-origin: 50% 100%;
   background:
@@ -664,7 +664,19 @@ details.what li { margin-bottom: 4px; }
 @keyframes pop { from { transform: scale(0.94); opacity: 0; } to { transform: none; opacity: 1; } }
 
 @media (prefers-reduced-motion: reduce) {
-  .road::before, .exit-shine, .button.go, .signed .thanks { animation: none; }
+  .exit-road::before, .exit-shine, .button.go, .signed .thanks { animation: none; }
   .exit-shine { display: none; }
   .gantry-post.reveal .exit-sign, .gantry-post.reveal.in .exit-sign { opacity: 1; transform: none; animation: none; }
 }
+
+/* ---------- Inner-page closer: a small green guide sign ---------- */
+
+.next-exit {
+  margin: 56px 0 0; padding: 26px 26px 28px;
+  background: var(--green); color: var(--white);
+  border-radius: 16px; box-shadow: inset 0 0 0 3px var(--green), inset 0 0 0 6px var(--white);
+}
+.next-exit-k { font-weight: 800; font-size: 0.9rem; letter-spacing: 0.04em; text-transform: uppercase; margin: 0 0 8px; opacity: 0.9; }
+.page .next-exit h2 { color: var(--white); margin: 0 0 8px; }
+.next-exit p { max-width: 42ch; }
+.next-exit .button { margin-top: 4px; }
