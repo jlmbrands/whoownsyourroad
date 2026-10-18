@@ -411,7 +411,10 @@ form.petition .button { width: 100%; }
 
 /* ---------- Inner pages (roads, write, sources, about) ---------- */
 
-.page { background: var(--white); color: var(--ink); min-height: 100svh; padding-bottom: 120px; }
+.page { background: var(--white); color: var(--ink); min-height: 100svh; display: flex; flex-direction: column; }
+.page > main { flex: 1 0 auto; padding-bottom: 72px; }
+/* The tall bottom padding only clears the floating pill, which lives on the home page */
+.page .site-footer, .signpage .site-footer { padding-bottom: calc(28px + env(safe-area-inset-bottom)); }
 .page .inner { max-width: 880px; margin: 0 auto; padding: 0 var(--gutter); }
 .page .page-head { padding-top: clamp(40px, 8vh, 96px); }
 
@@ -680,3 +683,52 @@ details.what li { margin-bottom: 4px; }
 .page .next-exit h2 { color: var(--white); margin: 0 0 8px; }
 .next-exit p { max-width: 42ch; }
 .next-exit .button { margin-top: 4px; }
+
+/* ---------- About page ---------- */
+
+.about-block { border-top: 4px solid var(--ink); margin-top: 48px; padding-top: 8px; }
+.about-block:first-of-type { margin-top: 24px; }
+.page .about-block > h2, .page .contact-sign h2 { margin-top: 0.7em; }
+.about-block .lead { font-size: clamp(1.2rem, 3vw, 1.5rem); font-weight: 600; line-height: 1.35; max-width: 34ch; }
+
+.badges { list-style: none; padding: 0; margin: 8px 0 0; display: flex; flex-wrap: wrap; gap: 10px; }
+.badges li {
+  margin: 0; font-weight: 800; font-size: 1rem;
+  padding: 10px 14px 7px; border: 3px solid var(--ink); border-radius: 8px;
+}
+.badges li::before { content: "✕"; margin-right: 8px; color: var(--red); font-weight: 900; }
+
+/* Fact-check rules as small white regulatory signs */
+.rules { list-style: none; padding: 0; margin: 8px 0 0; display: grid; gap: 14px; counter-reset: rule; }
+@media (min-width: 720px) { .rules { grid-template-columns: 1fr 1fr; } }
+.rules li {
+  counter-increment: rule; margin: 0;
+  border: 3px solid var(--ink); border-radius: 12px; padding: 16px 18px 14px;
+}
+.rules li::before {
+  content: counter(rule); display: grid; place-items: center;
+  width: 34px; height: 34px; padding-top: 3px; margin-bottom: 10px;
+  background: var(--ink); color: var(--white); border-radius: 50%; font-weight: 900;
+}
+.page .rules h3 { margin: 0 0 6px; }
+.rules p { margin: 0; font-size: 1.02rem; }
+
+.privacy-grid { display: grid; gap: 14px; margin: 8px 0 0; }
+@media (min-width: 720px) { .privacy-grid { grid-template-columns: repeat(3, 1fr); } }
+.pv { border: 3px solid var(--ink); border-radius: 12px; padding: 16px 18px 6px; }
+.pv.never { background: var(--ink); color: var(--white); }
+.page .pv h3 { margin: 0 0 8px; }
+.pv ul { padding-left: 1.1em; font-size: 1rem; }
+
+/* Contact as a blue services sign */
+.about-block#contact { border-top: 0; padding-top: 0; }
+.contact-sign {
+  background: var(--blue); color: var(--white); border-radius: 16px;
+  box-shadow: inset 0 0 0 3px var(--blue), inset 0 0 0 6px var(--white);
+  padding: 24px 26px 26px; display: grid; gap: 14px; align-items: center;
+}
+@media (min-width: 720px) { .contact-sign { grid-template-columns: 1fr auto; } }
+.page .contact-sign h2 { color: var(--white); margin-bottom: 6px; }
+.contact-sign p { margin: 0; }
+.contact-sign .addr { font-weight: 800; margin-top: 8px; overflow-wrap: anywhere; }
+.contact-sign .button { justify-self: start; }
