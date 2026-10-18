@@ -10,7 +10,7 @@ import json, pathlib, re, html
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 PUB = ROOT / "public"
 SITE = "https://whoownsyourroad.com"
-IMG_VERSION = "v5"
+IMG_VERSION = "v6"
 SITE_NAME = "Who Owns Your Road"
 
 PAGES = {
@@ -27,7 +27,7 @@ PAGES = {
         path="/sign",
         title="Sign the petition: cap DFW express lane tolls | Who Owns Your Road",
         description="Tell the Texas Legislature to cap surge tolls on private express lanes, open the books and vote before any new deal. Takes 60 seconds. Delivered January 12.",
-        og_title="Add your name. Austin hears it January 12.",
+        og_title="Sign the petition: cap DFW's $24 express lane tolls",
         og_description="$24 for six miles, on roads our taxes built. Tell the Legislature to cap it. 60 seconds.",
         image="sign",
         type="website",
