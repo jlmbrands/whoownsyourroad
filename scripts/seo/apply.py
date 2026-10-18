@@ -10,15 +10,15 @@ import json, pathlib, re, html
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 PUB = ROOT / "public"
 SITE = "https://whoownsyourroad.com"
-IMG_VERSION = "v6"
+IMG_VERSION = "v7"
 SITE_NAME = "Who Owns Your Road"
 
 PAGES = {
     "index.html": dict(
         path="/",
-        title="You paid for this road. They charge $24 to use it. | Who Owns Your Road",
+        title="Texas taxes built this road. The toll is $24. | Who Owns Your Road",
         description="DFW express lane tolls have hit $24 for six miles. The highways are Texas-owned. The tolls go to private investors until 2061. See who, and tell the Legislature to act.",
-        og_title="You paid for this road. They charge $24 to use it.",
+        og_title="Texas taxes built this road. The toll is $24.",
         og_description="Six miles on Loop 820. The tolls go to investors in Amsterdam and Paris until 2061. 60 seconds to tell the Legislature it's over.",
         image="home",
         type="website",

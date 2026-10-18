@@ -8,7 +8,7 @@
 import asyncio, pathlib
 from playwright.async_api import async_playwright
 
-VERSION = "v6"
+VERSION = "v7"
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 PUB = ROOT / "public"
 FONTS = (PUB / "fonts").as_uri()
@@ -16,7 +16,7 @@ DOTMATRIX = (PUB / "js" / "dotmatrix.js").as_uri()
 
 CARDS = {
     # name: (headline, kicker, label, readout)
-    "home":  ("You paid for this road. They charge $24 to use it.", "Six miles on Loop 820, Fort Worth. The tolls go to investors in Amsterdam and Paris until 2061.", "Fort Worth, rush hour", "$24.00"),
+    "home":  ("Texas taxes built this road. The toll is $24.", "About six miles on Loop 820. Private investors set the price and keep the tolls until 2061.", "Fort Worth, rush hour", "$24.00"),
     "roads": ("A company in Amsterdam sets the price on I-35W.", "Three DFW highways, one lead investor, contracts that run until 2061. Here's who, and what Texas paid.", "Who owns your road", "$24.00"),
     "write": ("Your state rep can end this. Tell them in 60 seconds.", "The letter is written. Look up your reps, add your name, hit send.", "Write your reps", "$24.00"),
     "sign":  ("Sign the petition.", "Cap the $24 tolls on DFW express lanes. Lawmakers meet in Austin January 12. Takes 60 seconds.", "Petition to the Texas Legislature", "$24.00"),
