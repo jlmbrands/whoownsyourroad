@@ -5,6 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#0f1115">
 <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="/map/manifest.webmanifest">
+<link rel="apple-touch-icon" href="/map/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Your Road">
+<meta name="description" content="Every public road in America, colored by who controls it. Red roads send tolls to private investors.">
 <title>Who Owns Your Road</title>
 <style>
 @font-face { font-family: "Overpass"; font-weight: 400; font-style: normal; font-display: swap; src: url("/fonts/overpass-latin-400-normal.woff2") format("woff2"); }
@@ -84,6 +91,13 @@ body.bare #brand,body.bare #hint,body.bare #idx-btn,body.bare #legend,body.bare 
 #idx h4{margin:10px 0 4px;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
 #idx button{display:block;width:100%;text-align:left;background:none;border:0;color:var(--fg);font:13px var(--display);padding:4px 0;cursor:pointer;border-bottom:1px solid var(--line)}
 #idx button b{font-family:var(--mono);font-size:11px;color:var(--muted);margin-right:6px}
+#install{position:absolute;left:50%;transform:translateX(-50%);bottom:calc(env(safe-area-inset-bottom,0px) + 150px);z-index:6;display:flex;align-items:center;gap:10px;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:8px 10px 8px 12px;box-shadow:0 8px 30px rgba(0,0,0,.4);max-width:calc(100% - 24px)}
+#install[hidden]{display:none}
+#install-btn{background:var(--road-stoll);color:#0f1115;border:0;border-radius:6px;padding:9px 12px;font:700 13px var(--display);cursor:pointer}
+#install-ios{margin:0;font:13px/1.35 var(--display);color:var(--fg)}
+#install-ios[hidden]{display:none}#install-ios b{color:var(--road-stoll)}
+#install-x{background:none;border:0;color:var(--muted);font-size:18px;cursor:pointer;padding:0 2px}
+@media (min-width:701px){#install{left:auto;right:16px;transform:none;bottom:16px}}
 #loading{position:absolute;inset:0;display:grid;place-items:center;font:500 14px var(--mono);color:var(--muted);z-index:7;background:var(--bg)}
 #loading[hidden]{display:none}
 @media (max-width:700px){
@@ -113,6 +127,11 @@ body.bare #brand,body.bare #hint,body.bare #idx-btn,body.bare #legend,body.bare 
 <button id="idx-btn" aria-expanded="false">All 53 private deals</button>
 <nav id="idx" hidden aria-label="Private toll deals"><div id="idx-body"></div></nav>
 <nav id="legend" aria-label="Road ownership"></nav>
+<div id="install" hidden>
+  <button id="install-btn" type="button">Add to your phone</button>
+  <p id="install-ios" hidden>Tap <b>Share</b>, then <b>Add to Home Screen</b>. Opens like an app, no store.</p>
+  <button id="install-x" type="button" aria-label="Dismiss">×</button>
+</div>
 <aside id="rail" hidden>
   <button class="close" aria-label="Close">×</button>
   <div id="rail-body"></div>
@@ -120,6 +139,6 @@ body.bare #brand,body.bare #hint,body.bare #idx-btn,body.bare #legend,body.bare 
 
 <script src="vendor/maplibre-gl.min.js"></script>
 <script src="vendor/pmtiles.js"></script>
-<script src="map.js?v=20261030b"></script>
+<script src="map.js?v=20261030c"></script>
 </body>
 </html>

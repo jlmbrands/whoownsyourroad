@@ -31,7 +31,7 @@ app.use(
   express.static(path.join(__dirname, "public"), {
     extensions: ["html"],
     setHeaders(res, filePath) {
-      if (filePath.endsWith(".html")) {
+      if (filePath.endsWith(".html") || filePath.endsWith("sw.js") || filePath.endsWith(".webmanifest")) {
         res.set("Cache-Control", "no-cache");
       } else if (/\.(css|js)$/.test(filePath)) {
         res.set("Cache-Control", "public, max-age=31536000, immutable");

@@ -101,6 +101,7 @@ map.on("load", async () => {
   map.on("click","pins",e=>{ const c=concessions.find(x=>x.id===e.features[0].properties.id); if(c){ showConcession(c); nudge(e.lngLat); } });
   map.on("mouseenter","pins",()=>map.getCanvas().style.cursor="pointer"); map.on("mouseleave","pins",()=>map.getCanvas().style.cursor="");
   buildLegend(); buildIndex();
+  if (location.search.includes("deals=1")) document.getElementById("idx-btn").click();
   let idles=0;
   map.on("idle", ()=>{ idles++; const n = map.queryRenderedFeatures().filter(f=>String(f.source).startsWith("roads")).length;
     if (n>0 || idles>6) document.getElementById("loading").hidden = true; else dbg(`idle #${idles}: 0 road features drawn, mode=${mode}, sources=${Object.keys(map.getStyle().sources).filter(k=>k.startsWith("roads")).length}`); });
@@ -226,3 +227,19 @@ function nudge(lngLat){ if (isPhone()) map.easeTo({center:lngLat, offset:[0,-win
 function openRail(){ const r=document.getElementById("rail"); r.hidden=false; r.scrollTop=0; }
 document.querySelector("#rail .close").onclick=()=>{ document.getElementById("rail").hidden=true; map.getSource("sel")?.setData({type:"FeatureCollection",features:[]}); };
 function esc(s){ return String(s??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m])); }
+
+
+// ---- Install as an app (PWA) ----
+(function(){
+  if ("serviceWorker" in navigator) navigator.serviceWorker.register("/map/sw.js").catch(()=>{});
+  const box=document.getElementById("install"), btn=document.getElementById("install-btn"), ios=document.getElementById("install-ios");
+  const standalone = window.matchMedia("(display-mode: standalone)").matches || navigator.standalone === true;
+  let dismissed=false; try { dismissed = localStorage.getItem("wyr-install-dismissed")==="1"; } catch(e){}
+  if (standalone || dismissed) return;
+  const isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent) && !window.MSStream;
+  let deferred=null;
+  window.addEventListener("beforeinstallprompt", e => { e.preventDefault(); deferred=e; btn.hidden=false; ios.hidden=true; box.hidden=false; });
+  btn.onclick = async () => { if (!deferred) return; deferred.prompt(); const r = await deferred.userChoice; deferred=null; if (r.outcome==="accepted") box.hidden=true; };
+  if (isIOS) setTimeout(() => { btn.hidden=true; ios.hidden=false; box.hidden=false; }, 12000);   // after they've had a look around
+  document.getElementById("install-x").onclick = () => { box.hidden=true; try { localStorage.setItem("wyr-install-dismissed","1"); } catch(e){} };
+})();

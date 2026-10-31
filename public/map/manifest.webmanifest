@@ -1,0 +1,21 @@
+{
+  "name": "Who Owns Your Road",
+  "short_name": "Your Road",
+  "description": "Every public road in America, colored by who controls it. Red roads send tolls to private investors.",
+  "id": "/map/",
+  "start_url": "/map/?source=pwa",
+  "scope": "/map/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#0f1115",
+  "theme_color": "#0f1115",
+  "icons": [
+    { "src": "/map/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/map/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/map/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    { "name": "Dallas-Fort Worth", "url": "/map/?source=pwa#@-97.3,32.8,9.5", "icons": [{ "src": "/map/icon-192.png", "sizes": "192x192" }] },
+    { "name": "All 53 private deals", "url": "/map/?source=pwa&deals=1", "icons": [{ "src": "/map/icon-192.png", "sizes": "192x192" }] }
+  ]
+}
