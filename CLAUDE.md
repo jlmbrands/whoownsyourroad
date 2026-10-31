@@ -20,3 +20,8 @@ Issue site at https://whoownsyourroad.com about private control of DFW toll lane
 ## Open items
 - Railway account is on Trial; upgrade to Hobby before launch.
 - Get permission from the four Facebook posters whose photos and receipts are cited as sources 23 and 24.
+
+## National map (/map)
+- `public/map/` is a self-contained MapLibre page: `index.html`, `map.js`, vendored `vendor/maplibre-gl.min.js` + `vendor/pmtiles.js` (CSP is script-src 'self', so no CDNs), tiles in `data/parts_us/` as PMTiles partitions listed in `manifest.json`.
+- The repo ships zoom 4-9 (`ov_*`, `mid_*`, ~136 MB). Street-level `hi_*` partitions (1.2 GB) live outside the repo; to enable them, put the files in `public/map/data/parts_us/` (or any Range-capable host) and add their entries to `manifest.json`.
+- Rebuild pipeline and data sources: https://github.com/jlmbrands/whoownsyourroad (see the `road/` bundle README).

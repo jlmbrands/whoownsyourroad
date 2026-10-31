@@ -19,7 +19,7 @@ app.use((req, res, next) => {
     "X-Frame-Options": "DENY",
     "Content-Security-Policy":
       "default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; " +
-      "script-src 'self'; connect-src 'self'; frame-ancestors 'none'",
+      "script-src 'self'; connect-src 'self'; worker-src 'self' blob:; frame-ancestors 'none'",
   });
   next();
 });
