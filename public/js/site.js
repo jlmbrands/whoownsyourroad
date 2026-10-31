@@ -254,6 +254,31 @@
     reveals.forEach(function (el) { el.classList.add("in"); });
   }
 
+  // ---- Hero map: a click on the poster opens the live map at that spot ----
+  // data-view is "lon,lat,zoom,width,height" of the view the poster was rendered from (512px tiles, cover-fit).
+
+  var heroMap = document.querySelector("[data-hero-map]");
+  if (heroMap) {
+    heroMap.addEventListener("click", function (ev) {
+      var v = (heroMap.getAttribute("data-view") || "").split(",").map(Number);
+      if (v.length < 5 || v.some(isNaN)) return;
+      var lon = v[0], lat = v[1], z = v[2], vw = v[3], vh = v[4];
+      var r = heroMap.getBoundingClientRect();
+      var s = Math.max(r.width / vw, r.height / vh);
+      var px = (ev.clientX - r.left - (r.width - vw * s) / 2) / s;
+      var py = (ev.clientY - r.top - (r.height - vh * s) / 2) / s;
+      var world = 512 * Math.pow(2, z);
+      var cx = (lon + 180) / 360 * world;
+      var sy = Math.sin(lat * Math.PI / 180);
+      var cy = (0.5 - Math.log((1 + sy) / (1 - sy)) / (4 * Math.PI)) * world;
+      var wx = cx + (px - vw / 2), wy = cy + (py - vh / 2);
+      var nlon = wx / world * 360 - 180;
+      var nlat = Math.atan(Math.sinh(Math.PI * (1 - 2 * wy / world))) * 180 / Math.PI;
+      ev.preventDefault();
+      location.href = "/map#@" + nlon.toFixed(4) + "," + nlat.toFixed(4) + "," + (z + 1.6).toFixed(1);
+    });
+  }
+
   // ---- Action pill: hide while the exit sign or share screen is up ----
 
   var pill = document.querySelector(".pill");

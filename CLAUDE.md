@@ -21,6 +21,11 @@ Issue site at https://whoownsyourroad.com about private control of DFW toll lane
 - Railway account is on Trial; upgrade to Hobby before launch.
 - Get permission from the four Facebook posters whose photos and receipts are cited as sources 23 and 24.
 
+## Home page (second cut, Oct 2026)
+- The first screen is `public/img/map/dfw.png`, a poster rendered from the live map (`/map/?bare=1&hero=1#@lon,lat,zoom` in a 1600x900 dark viewport at 2x). `data-view` on the hero link must match the render's center/zoom/size so a click opens `/map` at the clicked spot. Re-render with the same parameters after any tile rebuild; `us.png` is the national poster further down.
+- Sections are `.h-band` color bands sized to content (no forced full-screen panels, no eyebrow labels, no scroll reveals); only the exit sign keeps the `.sign` treatment. Styles live at the end of `site.css` under "Home, second cut".
+- `/map` deep links: `#c-<deal id>`, `#s-TX`, `#@lon,lat,zoom`.
+
 ## National map (/map)
 - `public/map/` is a self-contained MapLibre page: `index.html`, `map.js`, vendored `vendor/maplibre-gl.min.js` + `vendor/pmtiles.js` (CSP is script-src 'self', so no CDNs), tiles in `data/parts_us/` as PMTiles partitions listed in `manifest.json`.
 - The repo ships zoom 4-9 (`ov_*`, `mid_*`, ~136 MB). Street-level `hi_*` partitions (1.2 GB) live outside the repo; to enable them, put the files in `public/map/data/parts_us/` (or any Range-capable host) and add their entries to `manifest.json`.

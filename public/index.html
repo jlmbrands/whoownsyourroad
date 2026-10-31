@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#141618">
-  <link rel="stylesheet" href="/css/site.css?v=20261017j">
+  <link rel="stylesheet" href="/css/site.css?v=20261030a">
   <!-- seo:start -->
   <title>Texas taxes built this road. The toll is $24. | Who Owns Your Road</title>
   <meta name="description" content="DFW express lane tolls have hit $24 for six miles. The highways are Texas-owned. The tolls go to private investors until 2061. See who, and tell the Legislature to act.">
@@ -16,6 +16,7 @@
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/fonts/overpass-latin-900-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/overpass-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/img/map/dfw.png" as="image">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Who Owns Your Road">
   <meta property="og:locale" content="en_US">
@@ -36,54 +37,67 @@
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://whoownsyourroad.com/#org","name":"Who Owns Your Road","url":"https://whoownsyourroad.com/","logo":"https://whoownsyourroad.com/img/icon-512.png","email":"hello@whoownsyourroad.com","description":"An independent project on who controls Texas toll lanes, starting with the DFW express lanes."},{"@type":"WebSite","@id":"https://whoownsyourroad.com/#site","name":"Who Owns Your Road","url":"https://whoownsyourroad.com/","publisher":{"@id":"https://whoownsyourroad.com/#org"},"inLanguage":"en-US"}]}</script>
   <!-- seo:end -->
 </head>
-<body>
+<body class="home">
   <a class="skip" href="#main">Skip to content</a>
   <div class="progress" aria-hidden="true"></div>
   <div class="topline">
     <a href="/">Who Owns Your Road</a>
-    <a href="/sign">Sign the petition</a>
+    <a href="/map">The map</a>
   </div>
 
   <main id="main">
 
-    <!-- 1. The gantry -->
-    <section class="sign gantry" aria-label="Twenty-four dollars for about six miles">
-      <div class="inner">
-        <p class="gantry-label">Express lanes, Loop 820 east, rush hour</p>
-        <div class="readout" data-readout data-to="24" role="img" aria-label="Toll sign reading 12 dollars for carpools and 24 dollars for everyone else">
-          <div class="panel">
-            <div class="row"><span class="lbl">HOV 2+</span><div class="mx small" data-panel-hov></div></div>
-            <div class="row"><span class="lbl">TollTag</span><div class="mx" data-panel><span class="visually-hidden">$24.00</span></div></div>
+    <!-- 1. The map is the hero: Dallas-Fort Worth tonight, every road colored by who controls it. -->
+    <section class="h-hero" aria-label="Who owns your road">
+      <a class="h-hero-map" href="/map#@-97.3,32.86,9.6" data-hero-map data-view="-97.3,32.78,9.6,1600,900" aria-label="Open the Dallas-Fort Worth map">
+        <img src="/img/map/dfw.png" width="3200" height="1800" alt="Map of Dallas-Fort Worth roads. Red: express lanes run by private investors. Orange: NTTA toll roads. Yellow: TxDOT toll lanes. Grey: free roads." fetchpriority="high">
+      </a>
+      <div class="h-hero-text">
+        <h1 class="say">Who owns your road?</h1>
+        <p class="sub">Dallas–Fort Worth. The red lanes are run by private investors until 2061.<sup><a href="/sources#s10">10</a></sup></p>
+        <ul class="h-key" aria-label="Map colors">
+          <li><i style="background:#ff3d5a"></i>Private investors</li>
+          <li><i style="background:#f28c28"></i>NTTA, public toll authority</li>
+          <li><i style="background:#e0b84a"></i>TxDOT toll lanes</li>
+          <li><i style="background:#8e97a8"></i>Free roads</li>
+        </ul>
+        <div class="actions">
+          <a class="button amber" href="/map">Open the map</a>
+          <a class="button white" href="/sign">Sign the petition</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. The gantry: one road, one price -->
+    <section class="h-band asphalt" aria-label="Twenty-four dollars for about six miles">
+      <div class="inner two">
+        <div>
+          <p class="gantry-label">Express lanes, Loop 820 east, rush hour</p>
+          <div class="readout" data-readout data-to="24" role="img" aria-label="Toll sign reading 12 dollars for carpools and 24 dollars for everyone else">
+            <div class="panel">
+              <div class="row"><span class="lbl">HOV 2+</span><div class="mx small" data-panel-hov></div></div>
+              <div class="row"><span class="lbl">TollTag</span><div class="mx" data-panel><span class="visually-hidden">$24.00</span></div></div>
+            </div>
           </div>
         </div>
-        <h1 class="say">$24. About six miles.</h1>
-        <p class="sub">Loop 820, Fort Worth. On a road your taxes built.</p>
-        <p class="note">Photographed by drivers this year.<sup><a href="/sources#s23">23</a></sup><sup><a href="/sources#s12">12</a></sup></p>
-        <p class="cue" aria-hidden="true">Keep going</p>
+        <div>
+          <h2 class="say">$24. About six miles.</h2>
+          <p class="sub">Loop 820, Fort Worth. On a road your taxes built.</p>
+          <p class="note">Photographed by drivers this year.<sup><a href="/sources#s23">23</a></sup><sup><a href="/sources#s12">12</a></sup> One driver's bill: $93.70 for 17 minutes.<sup><a href="/sources#s24">24</a></sup></p>
+          <p class="note"><a href="/map#c-nte">This road on the map</a> &nbsp; Got a worse receipt? <a href="mailto:hello@whoownsyourroad.com?subject=My%20toll%20receipt">Send it to us.</a></p>
+        </div>
       </div>
     </section>
 
-    <!-- 1b. Receipts -->
-    <section class="sign asphalt" id="receipts" aria-label="Real receipts">
-      <div class="inner">
-        <p class="marker"><span class="dot"></span>Real receipts</p>
-        <h2 class="say wide reveal">17 minutes. $93.70.</h2>
-        <p class="sub reveal d1">One Fort Worth driver's toll bill.<sup><a href="/sources#s24">24</a></sup></p>
-        <ul class="facts side reveal d2">
-          <li><strong>$38</strong><span>12 miles in North Dallas<sup><a href="/sources#s24">24</a></sup></span></li>
-          <li><strong>$20.65</strong><span>About 3 miles<sup><a href="/sources#s23">23</a></sup></span></li>
-        </ul>
-        <p class="note">Got a worse one? <a href="mailto:hello@whoownsyourroad.com?subject=My%20toll%20receipt">Send it to us.</a></p>
-      </div>
-    </section>
-
-    <!-- 2. Warning: who gets the money -->
-    <section class="sign yellow" aria-label="The money does not go to Texas">
-      <div class="inner">
-        <p class="marker"><span class="diamond"></span>Warning</p>
-        <h2 class="say reveal">The money doesn't go to Texas.</h2>
-        <p class="sub reveal d1">Private investors set the price and keep the tolls.</p>
-        <div class="split side reveal d2" role="img" aria-label="Who owns the company that runs the I-35W express lanes: Cintra 53.7 percent, APG 28.8 percent, Meridiam 17.5 percent">
+    <!-- 3. Warning: who gets the money -->
+    <section class="h-band yellow" aria-label="The money does not go to Texas">
+      <div class="inner two">
+        <div>
+          <h2 class="say">The money doesn't go to Texas.</h2>
+          <p class="sub">Private investors set the price and keep the tolls.</p>
+          <p class="note">Owners of the I-35W toll lanes.<sup><a href="/sources#s5">5</a></sup> <a href="/roads">All three DFW roads</a> &nbsp; <a href="/map#c-nte-35w">On the map</a></p>
+        </div>
+        <div class="split" role="img" aria-label="Who owns the company that runs the I-35W express lanes: Cintra 53.7 percent, APG 28.8 percent, Meridiam 17.5 percent">
           <div class="track" aria-hidden="true">
             <div class="seg a" style="width:53.7%"></div>
             <div class="seg b" style="width:28.8%"></div>
@@ -95,27 +109,39 @@
             <li><i style="background:#8a918d"></i><span>Meridiam <small>France</small></span><span>17.5%</span></li>
           </ul>
         </div>
-        <p class="note">Owners of the I-35W toll lanes.<sup><a href="/sources#s5">5</a></sup> <a href="/roads">See all three roads</a></p>
       </div>
     </section>
 
-    <!-- 3. Guide: how long -->
-    <section class="sign green" aria-label="The deals last until 2061">
+    <!-- 4. The country: the same deal exists in a dozen states -->
+    <section class="h-band white h-nation" aria-label="Private toll roads across the country">
       <div class="inner">
-        <p class="marker"><span class="bar"></span>Until</p>
-        <h2 class="say narrow reveal">2061.</h2>
-        <p class="sub reveal d1">That's when the deals end. 35 more years.</p>
-        <p class="note">A kindergartner today will be 40.<sup><a href="/sources#s10">10</a></sup></p>
+        <h2 class="say wide">It's not just Texas.</h2>
+        <p class="sub">25 roads in 12 states send their tolls to private companies.<sup><a href="/sources#s25">25</a></sup> Three are in Dallas–Fort Worth. Together those three collected $935 million in 2025.<sup><a href="/sources#s26">26</a></sup></p>
+        <a class="h-nation-map" href="/map" aria-label="Open the national map">
+          <img src="/img/map/us.png" width="3200" height="1800" alt="Map of the United States with every state highway drawn and the private toll deals marked." loading="lazy">
+          <span>Every public road in America. Tap to explore.</span>
+        </a>
+        <ul class="h-deals">
+          <li><a href="/map#c-in-indiana-toll-road"><b>Indiana Toll Road</b><span>Indiana. I-80/90 across the north of the state.</span></a></li>
+          <li><a href="/map#c-il-chicago-skyway"><b>Chicago Skyway</b><span>Illinois. Chicago's South Side.</span></a></li>
+          <li><a href="/map#c-va-495-express-lanes"><b>495 Express Lanes</b><span>Virginia. The Capital Beltway.</span></a></li>
+          <li><a href="/map#c-va-dulles-greenway"><b>Dulles Greenway</b><span>Virginia. Loudoun County.</span></a></li>
+          <li><a href="/map#c-pr-pr22-pr5-metropistas"><b>PR-22 and PR-5</b><span>Puerto Rico. San Juan's main expressway.</span></a></li>
+          <li><a href="/map#c-co-northwest-parkway"><b>Northwest Parkway</b><span>Colorado. Denver's northwest loop.</span></a></li>
+        </ul>
+        <p class="note">Each one on the map has the contract, the owners and the money, with sources. <a href="/map">See all 53 private deals</a>, including the ones states bought back.</p>
       </div>
     </section>
 
-    <!-- 4. Regulatory: the rules -->
-    <section class="sign white" aria-label="How the price gets so high">
-      <div class="inner">
-        <p class="marker"><span class="dot"></span>The rules</p>
-        <h2 class="say reveal">No real price limit.</h2>
-        <p class="sub reveal d1">When traffic is heavy, the contract lets the price go past the cap.<sup><a href="/sources#s12">12</a></sup></p>
-        <ul class="facts side reveal d2">
+    <!-- 5. Guide: how long, and the rules -->
+    <section class="h-band green" aria-label="The deals last until 2061">
+      <div class="inner two">
+        <div>
+          <h2 class="say narrow">2061.</h2>
+          <p class="sub">That's when the DFW deals end. 35 more years, and no real price limit until then.<sup><a href="/sources#s12">12</a></sup></p>
+          <p class="note">A kindergartner today will be 40.<sup><a href="/sources#s10">10</a></sup> When traffic is heavy, the contract lets the price go past the cap.</p>
+        </div>
+        <ul class="facts">
           <li><strong>+13%</strong><span>Price per trip in 2025. Inflation: 3%.<sup><a href="/sources#s15">15</a></sup></span></li>
           <li><strong>$1.2B</strong><span>What Texas taxpayers put in.<sup><a href="/sources#s1">1</a></sup><sup><a href="/sources#s10">10</a></sup></span></li>
         </ul>
@@ -123,22 +149,23 @@
     </section>
 
     <!-- 6. Your number -->
-    <section class="sign white" id="bill" aria-label="Your bill until 2061">
-      <div class="inner calc" data-calc>
-        <p class="marker"><span class="dot"></span>Your number</p>
-        <h2 class="say wide">Your bill by 2061?</h2>
-        <label for="monthly">Your tolls per month</label>
-        <div class="money">
-          <span>$</span>
-          <input type="text" id="monthly" inputmode="decimal" value="60" maxlength="6" autocomplete="off">
+    <section class="h-band white" id="bill" aria-label="Your bill until 2061">
+      <div class="inner calc two" data-calc>
+        <div>
+          <h2 class="say wide">Your bill by 2061?</h2>
+          <label for="monthly">Your tolls per month</label>
+          <div class="money">
+            <span>$</span>
+            <input type="text" id="monthly" inputmode="decimal" value="60" maxlength="6" autocomplete="off">
+          </div>
+          <div class="presets" role="group" aria-label="Common amounts">
+            <button class="chip" type="button" data-amount="25">$25</button>
+            <button class="chip" type="button" data-amount="60">$60</button>
+            <button class="chip" type="button" data-amount="120">$120</button>
+            <button class="chip" type="button" data-amount="250">$250</button>
+          </div>
         </div>
-        <div class="presets" role="group" aria-label="Common amounts">
-          <button class="chip" type="button" data-amount="25">$25</button>
-          <button class="chip" type="button" data-amount="60">$60</button>
-          <button class="chip" type="button" data-amount="120">$120</button>
-          <button class="chip" type="button" data-amount="250">$250</button>
-        </div>
-        <div class="calc-out side" aria-live="polite">
+        <div class="calc-out" aria-live="polite">
           <div class="big" data-calc-total role="img" aria-label="$0"></div>
           <p class="explain">Over <span data-calc-years>35</span> years. If prices never go up.<sup><a href="/sources#s15">15</a></sup></p>
           <button class="button amber" type="button" data-calc-share>Share my number</button>
@@ -147,27 +174,27 @@
       </div>
     </section>
 
-    <!-- 8. Work zone: the asks -->
-    <section class="sign orange" id="asks" aria-label="What we are asking for">
-      <div class="inner">
-        <p class="marker"><span class="diamond"></span>Work ahead</p>
-        <h2 class="say wide reveal">Lawmakers meet in <span data-days-to-session>87 days</span>.</h2>
-        <p class="sub reveal d1">We want four things:</p>
-        <ol class="asks side reveal d2">
+    <!-- 7. Work zone: the asks -->
+    <section class="h-band orange" id="asks" aria-label="What we are asking for">
+      <div class="inner two">
+        <div>
+          <h2 class="say wide">Lawmakers meet in <span data-days-to-session>87 days</span>.</h2>
+          <p class="sub">We want four things.</p>
+          <p class="note">Fair point: the deals also rebuilt the free lanes.<sup><a href="/sources#s1">1</a></sup> That doesn't justify no limit for 35 years.</p>
+        </div>
+        <ol class="asks">
           <li><div><h3>Cap the price</h3><p>A hard limit, in state law.</p></div></li>
           <li><div><h3>Open the books</h3><p>Show what they collect and keep.</p></div></li>
           <li><div><h3>Price the buyout</h3><p>What would ending it early cost?</p></div></li>
           <li><div><h3>Vote first</h3><p>No new deals without a vote.</p></div></li>
         </ol>
-        <p class="note">Fair point: the deals also rebuilt the free lanes.<sup><a href="/sources#s1">1</a></sup> That doesn't justify no limit for 35 years.</p>
       </div>
     </section>
 
-    <!-- 9. Your exit: the call to action. The petition itself lives on /sign. -->
+    <!-- 8. Your exit: the call to action. The petition itself lives on /sign. -->
     <section class="sign exitzone" id="exit" aria-label="Sign the petition">
       <div class="exit-road" aria-hidden="true"></div>
       <div class="inner">
-        <p class="marker"><span class="bar"></span>Your exit</p>
         <div class="gantry-post reveal">
           <a class="exit-sign" href="/sign">
             <span class="exit-tab">EXIT <b>1</b></span>
@@ -177,44 +204,46 @@
             <span class="exit-sub">Austin<i aria-hidden="true">·</i>January 12</span>
           </a>
         </div>
-        <p class="exit-line reveal d1">60 seconds. Lawmakers meet in <span data-days-to-session>87 days</span>.</p>
-        <p class="exit-count reveal d2" data-goal><span class="first">Be one of the first 100.</span><span class="nums"><strong data-sig-count>0</strong> names so far</span></p>
+        <p class="exit-line">60 seconds. Lawmakers meet in <span data-days-to-session>87 days</span>.</p>
+        <p class="exit-count" data-goal><span class="first">Be one of the first 100.</span><span class="nums"><strong data-sig-count>0</strong> names so far</span></p>
       </div>
     </section>
 
-    <!-- 10. Services: share -->
-    <section class="sign blue" id="share" aria-label="Share this">
-      <div class="inner">
-        <p class="marker"><span class="dot"></span>Pass it on</p>
-        <h2 class="say wide reveal">Send it to someone who drives 35W.</h2>
-        <div class="share-card side reveal d2"><img src="/img/share-home-v7.png" width="1200" height="630" alt="Link preview: a toll sign reading $24.00 with the words Texas taxes built this road. The toll is $24." loading="lazy"></div>
-        <div class="share-row">
-          <button class="share-btn" type="button" data-share="native"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 16a3 3 0 0 0-2.2 1l-7-4a3 3 0 0 0 0-2l7-4A3 3 0 1 0 15 5l.1.9-7 4a3 3 0 1 0 0 4.2l7 4V19a3 3 0 1 0 3-3z"/></svg>Share</button>
-          <button class="share-btn" type="button" data-share="sms"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3C6.5 3 2 6.6 2 11c0 2.4 1.3 4.5 3.4 6L4 21l5.3-2.2c.9.2 1.8.2 2.7.2 5.5 0 10-3.6 10-8s-4.5-8-10-8z"/></svg>Text</button>
-          <button class="share-btn" type="button" data-share="x"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 3h3.1l-6.8 7.8L22 21h-6.3l-4.9-6.4L5.2 21H2.1l7.3-8.3L2 3h6.4l4.4 5.9L17.5 3zm-1.1 16.2h1.7L7 4.7H5.2l11.2 14.5z"/></svg>X</button>
-          <button class="share-btn" type="button" data-share="facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 22v-8h2.7l.4-3.2h-3.1V8.8c0-.9.3-1.6 1.6-1.6h1.7V4.3c-.3 0-1.3-.1-2.5-.1-2.5 0-4.1 1.5-4.1 4.3v2.3H7.4V14h2.8v8h3.3z"/></svg>Facebook</button>
-          <button class="share-btn" type="button" data-share="threads"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.2 22c-3 0-5.3-1-6.9-3-1.4-1.8-2.1-4.2-2.2-7v-.1c.1-2.8.8-5.2 2.2-7C6.9 3 9.2 2 12.2 2c2.3 0 4.2.6 5.7 1.8 1.3 1.1 2.2 2.6 2.7 4.5l-2 .5c-.7-2.9-2.9-4.6-6.4-4.6-2.3 0-4 .7-5.2 2.2C5.9 7.8 5.3 9.8 5.2 12c.1 2.2.7 4.2 1.8 5.6 1.2 1.5 2.9 2.2 5.2 2.2 2.1 0 3.5-.5 4.6-1.6 1.2-1.2 1.2-2.7.8-3.6-.3-.6-.8-1.1-1.5-1.5-.2 1.4-.6 2.5-1.3 3.3-.9 1-2.2 1.6-3.8 1.7-1.2.1-2.4-.2-3.3-.8-1-.7-1.6-1.8-1.7-3-.1-1.2.4-2.3 1.3-3.1.9-.8 2.2-1.2 3.7-1.3.9 0 1.8 0 2.6.2 0-.7-.2-1.3-.6-1.7-.5-.5-1.2-.8-2.1-.8-1.3 0-2.3.5-2.9 1.4l-1.6-1.1c.9-1.4 2.5-2.2 4.5-2.2 1.5 0 2.7.5 3.6 1.4.8.8 1.2 1.9 1.3 3.3.1 0 .2.1.3.1 1.4.7 2.3 1.6 2.8 2.8.7 1.7.6 4.1-1.2 5.9-1.5 1.5-3.4 2.2-6 2.2zm-.8-10.2c-1.1.1-2.4.4-2.4 1.6 0 .6.3 1 .7 1.3.5.3 1.2.5 1.9.4 1.8-.1 2.7-1 3-3.1-.6-.2-1.3-.3-2-.3h-1.2z"/></svg>Threads</button>
-          <button class="share-btn" type="button" data-share="email"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm1 2.4V17h16V7.4l-8 5-8-5zM4.6 7l7.4 4.6L19.4 7H4.6z"/></svg>Email</button>
-          <button class="share-btn" type="button" data-share="copy"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3h11a1 1 0 0 1 1 1v12h-2V5H8V3zM4 7h11a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1zm1 2v10h9V9H5z"/></svg>Copy link</button>
+    <!-- 9. Services: share -->
+    <section class="h-band blue" id="share" aria-label="Share this">
+      <div class="inner two">
+        <div>
+          <h2 class="say wide">Send it to someone who drives 35W.</h2>
+          <div class="share-row">
+            <button class="share-btn" type="button" data-share="native"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 16a3 3 0 0 0-2.2 1l-7-4a3 3 0 0 0 0-2l7-4A3 3 0 1 0 15 5l.1.9-7 4a3 3 0 1 0 0 4.2l7 4V19a3 3 0 1 0 3-3z"/></svg>Share</button>
+            <button class="share-btn" type="button" data-share="sms"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3C6.5 3 2 6.6 2 11c0 2.4 1.3 4.5 3.4 6L4 21l5.3-2.2c.9.2 1.8.2 2.7.2 5.5 0 10-3.6 10-8s-4.5-8-10-8z"/></svg>Text</button>
+            <button class="share-btn" type="button" data-share="x"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 3h3.1l-6.8 7.8L22 21h-6.3l-4.9-6.4L5.2 21H2.1l7.3-8.3L2 3h6.4l4.4 5.9L17.5 3zm-1.1 16.2h1.7L7 4.7H5.2l11.2 14.5z"/></svg>X</button>
+            <button class="share-btn" type="button" data-share="facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 22v-8h2.7l.4-3.2h-3.1V8.8c0-.9.3-1.6 1.6-1.6h1.7V4.3c-.3 0-1.3-.1-2.5-.1-2.5 0-4.1 1.5-4.1 4.3v2.3H7.4V14h2.8v8h3.3z"/></svg>Facebook</button>
+            <button class="share-btn" type="button" data-share="threads"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.2 22c-3 0-5.3-1-6.9-3-1.4-1.8-2.1-4.2-2.2-7v-.1c.1-2.8.8-5.2 2.2-7C6.9 3 9.2 2 12.2 2c2.3 0 4.2.6 5.7 1.8 1.3 1.1 2.2 2.6 2.7 4.5l-2 .5c-.7-2.9-2.9-4.6-6.4-4.6-2.3 0-4 .7-5.2 2.2C5.9 7.8 5.3 9.8 5.2 12c.1 2.2.7 4.2 1.8 5.6 1.2 1.5 2.9 2.2 5.2 2.2 2.1 0 3.5-.5 4.6-1.6 1.2-1.2 1.2-2.7.8-3.6-.3-.6-.8-1.1-1.5-1.5-.2 1.4-.6 2.5-1.3 3.3-.9 1-2.2 1.6-3.8 1.7-1.2.1-2.4-.2-3.3-.8-1-.7-1.6-1.8-1.7-3-.1-1.2.4-2.3 1.3-3.1.9-.8 2.2-1.2 3.7-1.3.9 0 1.8 0 2.6.2 0-.7-.2-1.3-.6-1.7-.5-.5-1.2-.8-2.1-.8-1.3 0-2.3.5-2.9 1.4l-1.6-1.1c.9-1.4 2.5-2.2 4.5-2.2 1.5 0 2.7.5 3.6 1.4.8.8 1.2 1.9 1.3 3.3.1 0 .2.1.3.1 1.4.7 2.3 1.6 2.8 2.8.7 1.7.6 4.1-1.2 5.9-1.5 1.5-3.4 2.2-6 2.2zm-.8-10.2c-1.1.1-2.4.4-2.4 1.6 0 .6.3 1 .7 1.3.5.3 1.2.5 1.9.4 1.8-.1 2.7-1 3-3.1-.6-.2-1.3-.3-2-.3h-1.2z"/></svg>Threads</button>
+            <button class="share-btn" type="button" data-share="email"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm1 2.4V17h16V7.4l-8 5-8-5zM4.6 7l7.4 4.6L19.4 7H4.6z"/></svg>Email</button>
+            <button class="share-btn" type="button" data-share="copy"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3h11a1 1 0 0 1 1 1v12h-2V5H8V3zM4 7h11a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1zm1 2v10h9V9H5z"/></svg>Copy link</button>
+          </div>
+          <p class="note">Or <a href="/write">email your reps</a>. Takes a minute.</p>
         </div>
-        <p class="note">Or <a href="/write">email your reps</a>. Takes a minute.</p>
+        <div class="share-card"><img src="/img/share-home-v7.png" width="1200" height="630" alt="Link preview: a toll sign reading $24.00 with the words Texas taxes built this road. The toll is $24." loading="lazy"></div>
       </div>
     </section>
   </main>
 
   <nav class="pill" aria-label="Quick actions">
     <a class="primary" href="/sign">Sign</a>
+    <a href="/map">Map</a>
     <a href="#share">Share</a>
   </nav>
 
   <footer class="site-footer">
     <div class="inner">
       <p>Who Owns Your Road is an independent project. It isn't affiliated with TxDOT, TEXpress Lanes, Ferrovial or any campaign.</p>
-      <p><a href="/roads">The roads in detail</a> &nbsp; <a href="/sources">Sources</a> &nbsp; <a href="/about">About</a> &nbsp; <a href="/about#privacy">Privacy</a></p>
+      <p><a href="/map">The map</a> &nbsp; <a href="/roads">The DFW roads in detail</a> &nbsp; <a href="/sources">Sources</a> &nbsp; <a href="/about">About</a> &nbsp; <a href="/about#privacy">Privacy</a></p>
     </div>
   </footer>
 
-  <script src="/js/dotmatrix.js?v=20261017j" defer></script>
-  <script src="/js/site.js?v=20261017j" defer></script>
+  <script src="/js/dotmatrix.js?v=20261030a" defer></script>
+  <script src="/js/site.js?v=20261030a" defer></script>
   </body>
 </html>

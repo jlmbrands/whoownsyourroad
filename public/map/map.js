@@ -15,6 +15,11 @@ const CLASSES = [
 const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
 const colorExpr = () => ["match",["get","owner_class"], ...CLASSES.flatMap(([k,,v])=>[k,css(v)]), css("--road-county")];
 let stats={}, concessions=[];
+// Some states encode route names oddly in HPMS (Arizona: "~~I~040~~~~"). Make them readable.
+function prettyName(n){ n=(n==null||n==="nan")?"":String(n).trim(); if(!n) return "Unnamed road";
+  const m=n.match(/^~*([A-Z])~(\d+)~/); if(m){ const t={I:"I-",U:"US ",S:"SR ",B:"Bus ",C:"CR "}[m[1]]||""; return t+String(Number(m[2])); }
+  n=n.replace(/~+/g," ").replace(/\s+/g," ").trim();
+  return n.replace(/^INTERSTATE (\d+)/i,"I-$1").replace(/^US HIGHWAY (\d+)/i,"US $1").replace(/^STATE (?:HIGHWAY|ROUTE) (\d+)/i,"SR $1") || "Unnamed road"; }
 const fmt = n => n==null||isNaN(n) ? "–" : Number(n).toLocaleString("en-US");
 
 const map = new maplibregl.Map({
@@ -31,8 +36,9 @@ map.on("load", async () => {
   map.addSource("states",{type:"geojson",data:"data/us_states.geojson"});
   map.addLayer({id:"states",type:"line",source:"states",paint:{"line-color":css("--road-county"),"line-width":["interpolate",["linear"],["zoom"],4,0.6,8,1.4],"line-opacity":0.8}});
   map.addSource("sel",{type:"geojson",data:{type:"FeatureCollection",features:[]}});
-  const widthPublic = ["interpolate",["linear"],["zoom"],4,0.5,6,0.8,10,1.2,14,3];
-  const widthToll = ["interpolate",["linear"],["zoom"],4,1.6,6,2,10,2.6,14,5];
+  const W = location.search.includes("hero") ? 2.2 : 1;   // ?hero=1 renders bolder lines for the home-page poster image
+  const widthPublic = ["interpolate",["linear"],["zoom"],4,0.5*W,6,0.8*W,10,1.2*W,14,3];
+  const widthToll = ["interpolate",["linear"],["zoom"],4,1.6*W,6,2*W,10,2.6*W,14,5];
   let mode = "tiles";
   let MANIFEST = "data/parts_us/manifest.json";   // resolved below: the artifact host carries manifest.artifact.json (.wasm names), a normal deploy carries manifest.json
   async function addRoadLayers(){
@@ -98,8 +104,16 @@ map.on("load", async () => {
   let idles=0;
   map.on("idle", ()=>{ idles++; const n = map.queryRenderedFeatures().filter(f=>String(f.source).startsWith("roads")).length;
     if (n>0 || idles>6) document.getElementById("loading").hidden = true; else dbg(`idle #${idles}: 0 road features drawn, mode=${mode}, sources=${Object.keys(map.getStyle().sources).filter(k=>k.startsWith("roads")).length}`); });
-  const openHash=()=>{ if (location.hash.startsWith("#c-")) { const c=concessions.find(x=>x.id===location.hash.slice(3)); if(c) showConcession(c); } };
+  // Deep links: #c-<deal id> opens a dossier, #s-TX fits a state, #@lon,lat,zoom goes to a spot
+  const statesGeo = await fetch("data/us_states.geojson").then(r=>r.json());
+  const openHash=()=>{ const h=location.hash;
+    if (h.startsWith("#c-")) { const c=concessions.find(x=>x.id===h.slice(3)); if(c) showConcession(c); }
+    else if (h.startsWith("#s-")) { const code=h.slice(3).toUpperCase(); const f=statesGeo.features.find(f=>(f.properties.STUSPS||f.properties.abbr||f.properties.state)===code); if(!f) return;
+      let b=[180,90,-180,-90]; const walk=c=>{ if(typeof c[0]==="number"){ b=[Math.min(b[0],c[0]),Math.min(b[1],c[1]),Math.max(b[2],c[0]),Math.max(b[3],c[1])]; } else c.forEach(walk); }; walk(f.geometry.coordinates);
+      map.fitBounds([[b[0],b[1]],[b[2],b[3]]],{padding:40,duration:0}); }
+    else if (h.startsWith("#@")) { const [lon,lat,z]=h.slice(2).split(",").map(Number); if(isFinite(lon)&&isFinite(lat)) map.jumpTo({center:[lon,lat],zoom:isFinite(z)?z:9}); } };
   openHash(); window.addEventListener("hashchange", openHash);
+  if (location.search.includes("bare")) document.body.classList.add("bare");
 });
 
 function buildLegend(){
@@ -122,7 +136,7 @@ function showFeature(f){
   const c = p.concession_id ? concessions.find(x=>x.id===p.concession_id) : null;
   if (c) return showConcession(c, p);
   const cls = CLASSES.find(x=>x[0]===p.owner_class)||CLASSES[5];
-  const name = p.name || p.route || p.street || "Unnamed road";
+  const name = prettyName(p.name || p.route || p.street);
   document.getElementById("rail-body").innerHTML = `
     <p class="eyebrow" style="--cls:${css(cls[2])}"><b>■ ${cls[1]}</b></p>
     <h2>${esc(name)}</h2>

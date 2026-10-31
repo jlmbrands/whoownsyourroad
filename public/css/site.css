@@ -519,7 +519,7 @@ ol.sources .src-note { display: block; color: var(--muted); }
   table.stack .bar { height: 14px; }
 }
 
-.sign sup a { color: inherit; opacity: 0.75; }
+.sign sup a, .h-band sup a, .h-hero sup a { color: inherit; opacity: 0.75; }
 
 /* Optional note collapses behind a link */
 .note-toggle { display: block; text-align: left; font: inherit; font-weight: 700; font-size: 0.98rem; background: none; border: 0; padding: 0; color: var(--green); text-decoration: underline; cursor: pointer; margin: 0 0 14px; }
@@ -732,3 +732,97 @@ details.what li { margin-bottom: 4px; }
 .contact-sign p { margin: 0; }
 .contact-sign .addr { font-weight: 800; margin-top: 8px; overflow-wrap: anywhere; }
 .contact-sign .button { justify-self: start; }
+
+/* ---------- Home, second cut: the map leads ----------
+   The first screen is a real map of Dallas-Fort Worth drawn from the ownership data. Everything after it
+   is a flat band in a sign color, sized to its content; the only "sign" left is the exit sign. */
+
+.home .topline { position: absolute; }
+
+.h-hero { position: relative; min-height: 100svh; display: grid; align-content: end; background: #0f1115; color: var(--white); isolation: isolate; }
+.h-hero-map { position: absolute; inset: 0; z-index: 0; display: block; overflow: hidden; cursor: crosshair; }
+.h-hero-map img { width: 100%; height: 100%; object-fit: cover; object-position: 62% 48%; }
+.h-hero-map::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(to top, rgba(15,17,21,0.97) 0%, rgba(15,17,21,0.82) 30%, rgba(15,17,21,0.25) 60%, rgba(15,17,21,0) 100%);
+}
+.h-hero-text { position: relative; z-index: 1; width: 100%; max-width: var(--wrap); margin: 0 auto; padding: 0 var(--gutter) clamp(84px, 12vh, 120px); pointer-events: none; }
+.h-hero-text > * { pointer-events: auto; }
+.h-hero-text .say { font-size: clamp(2.9rem, 11vw, 6.6rem); max-width: 10.5ch; margin-bottom: 0.25em; text-shadow: 0 2px 24px rgba(15,17,21,0.9); }
+.h-hero-text .sub, .h-hero-text .h-key { text-shadow: 0 1px 12px rgba(15,17,21,0.95), 0 0 2px rgba(15,17,21,1); }
+.h-hero-text .sub { max-width: 30ch; margin-bottom: 0.9em; }
+.h-hero-text .actions { margin-top: 20px; }
+
+.h-key { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 6px 18px; font-weight: 700; font-size: 0.95rem; color: #d7dbe3; }
+.h-key li { display: inline-flex; align-items: center; gap: 8px; }
+.h-key i { width: 22px; height: 5px; border-radius: 3px; display: inline-block; }
+
+@media (min-width: 900px) {
+  .h-hero { min-height: calc(100svh); }
+  .h-hero-text { display: grid; grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr); column-gap: 48px; align-items: end; }
+  .h-hero-text .say { grid-column: 1; grid-row: 1 / span 3; }
+  .h-hero-text .sub, .h-hero-text .h-key, .h-hero-text .actions { grid-column: 2; }
+  .h-hero-map img { object-position: 58% 50%; }
+}
+
+/* Bands: the sign colors, flat, with the content in one or two columns */
+.h-band { padding: clamp(56px, 10vh, 120px) var(--gutter); position: relative; }
+.h-band > .inner { max-width: var(--wrap); margin: 0 auto; }
+.h-band.asphalt { background: var(--asphalt); color: var(--white); }
+.h-band.yellow { background: var(--yellow); color: var(--ink); }
+.h-band.green { background: var(--green); color: var(--white); }
+.h-band.white { background: var(--white); color: var(--ink); }
+.h-band.orange { background: var(--orange); color: var(--ink); }
+.h-band.blue { background: var(--blue); color: var(--white); }
+.h-band + .h-band.white, .h-band.white + .h-band.white { border-top: 4px solid var(--ink); }
+.h-band .say { margin-bottom: 0.3em; }
+.h-band .sub { margin-bottom: 0.8em; }
+.h-band .note { margin-top: 0.8em; }
+.h-band .facts, .h-band .asks, .h-band .split { margin-top: 0; }
+.h-band .readout { margin-bottom: 0; }
+.h-band .calc-out { margin-top: 0; }
+.h-band .share-card { margin: 0; }
+.h-band .share-row { margin-top: 4px; }
+.h-band.asphalt .note a, .h-band.green .note a, .h-band.blue .note a { color: inherit; }
+
+@media (min-width: 900px) {
+  .h-band .inner.two { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); column-gap: clamp(40px, 6vw, 88px); align-items: center; }
+  .h-band.asphalt .inner.two { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  .h-band .inner.two > :first-child { min-width: 0; }
+}
+@media (max-width: 899px) {
+  .h-band .inner.two > * + * { margin-top: 32px; }
+  .h-band.asphalt .inner.two > :first-child { margin-bottom: 28px; }
+}
+
+/* The country */
+.h-nation .sub { max-width: 44ch; }
+.h-nation-map { display: block; position: relative; margin: 28px 0 24px; border-radius: 12px; overflow: hidden; background: #0f1115; border: 4px solid var(--ink); }
+.h-nation-map img { width: 100%; height: auto; display: block; }
+.h-nation-map span {
+  position: absolute; left: 14px; bottom: 12px;
+  background: var(--amber); color: var(--ink); font-weight: 800; font-size: 0.95rem;
+  padding: 8px 12px 6px; border-radius: 6px;
+}
+.h-nation-map:hover span, .h-nation-map:focus-visible span { background: #ffc233; }
+
+.h-deals { list-style: none; padding: 0; margin: 0; display: grid; gap: 0; border-top: 3px solid var(--ink); }
+.h-deals li { border-bottom: 3px solid var(--ink); }
+.h-deals a { display: grid; grid-template-columns: 1fr auto; align-items: baseline; gap: 4px 16px; padding: 14px 0 10px; text-decoration: none; }
+.h-deals a:hover b, .h-deals a:focus-visible b { text-decoration: underline; text-decoration-thickness: 3px; text-underline-offset: 0.12em; }
+.h-deals b { font-weight: 900; font-size: clamp(1.25rem, 3.2vw, 1.7rem); line-height: 1.1; letter-spacing: -0.01em; }
+.h-deals span { grid-column: 1; font-size: 1rem; color: var(--muted); }
+.h-deals a::after { content: "On the map"; grid-column: 2; grid-row: 1 / span 2; align-self: center; font-weight: 800; font-size: 0.9rem; color: var(--ink); white-space: nowrap; padding: 7px 10px 5px; border: 3px solid var(--ink); border-radius: 999px; }
+.h-deals a:hover::after { background: var(--ink); color: var(--white); }
+
+@media (min-width: 720px) {
+  .h-deals { grid-template-columns: 1fr 1fr; column-gap: 40px; }
+  .h-deals li:nth-child(2) { border-top: 3px solid var(--ink); margin-top: -3px; }
+}
+
+/* Exit sign stays a full screen, full bleed */
+@media (min-width: 900px) { .sign.exitzone { max-width: none; margin: 0; border-radius: 0; } }
+.sign.exitzone .exit-line { margin-top: clamp(28px, 5vh, 44px); }
+
+/* Pill: three stops now */
+.pill a + a { margin-left: 0; }
