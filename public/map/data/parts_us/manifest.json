@@ -1,0 +1,134 @@
+[
+ {
+  "file": "data/parts_us/ov_0.pmtiles",
+  "minzoom": 4,
+  "maxzoom": 6,
+  "bounds": [
+   -180.0,
+   0.0,
+   -45.0,
+   74.02
+  ]
+ },
+ {
+  "file": "data/parts_us/mid_0.pmtiles",
+  "minzoom": 7,
+  "maxzoom": 9,
+  "bounds": [
+   -177.188,
+   17.979,
+   -115.312,
+   71.525
+  ]
+ },
+ {
+  "file": "data/parts_us/mid_1.pmtiles",
+  "minzoom": 7,
+  "maxzoom": 9,
+  "bounds": [
+   -118.125,
+   29.535,
+   -104.062,
+   50.736
+  ]
+ },
+ {
+  "file": "data/parts_us/mid_2.pmtiles",
+  "minzoom": 7,
+  "maxzoom": 9,
+  "bounds": [
+   -106.875,
+   24.527,
+   -95.625,
+   50.736
+  ]
+ },
+ {
+  "file": "data/parts_us/mid_3.pmtiles",
+  "minzoom": 7,
+  "maxzoom": 9,
+  "bounds": [
+   -98.438,
+   24.527,
+   -90.0,
+   50.736
+  ]
+ },
+ {
+  "file": "data/parts_us/mid_4.pmtiles",
+  "minzoom": 7,
+  "maxzoom": 9,
+  "bounds": [
+   -92.812,
+   27.059,
+   -87.188,
+   48.922
+  ]
+ },
+ {
+  "file": "data/parts_us/mid_5.pmtiles",
+  "minzoom": 7,
+  "maxzoom": 9,
+  "bounds": [
+   -90.0,
+   27.059,
+   -84.375,
+   47.04
+  ]
+ },
+ {
+  "file": "data/parts_us/mid_6.pmtiles",
+  "minzoom": 7,
+  "maxzoom": 9,
+  "bounds": [
+   -87.188,
+   29.535,
+   -81.562,
+   47.04
+  ]
+ },
+ {
+  "file": "data/parts_us/mid_7.pmtiles",
+  "minzoom": 7,
+  "maxzoom": 9,
+  "bounds": [
+   -84.375,
+   23.241,
+   -78.75,
+   45.089
+  ]
+ },
+ {
+  "file": "data/parts_us/mid_8.pmtiles",
+  "minzoom": 7,
+  "maxzoom": 9,
+  "bounds": [
+   -81.562,
+   24.527,
+   -75.938,
+   45.089
+  ]
+ },
+ {
+  "file": "data/parts_us/mid_9.pmtiles",
+  "minzoom": 7,
+  "maxzoom": 9,
+  "bounds": [
+   -78.75,
+   16.636,
+   -64.688,
+   48.922
+  ]
+ },
+ {
+  "file": "data/parts_us/mid_10.pmtiles",
+  "minzoom": 8,
+  "maxzoom": 9,
+  "bounds": [
+   -67.5,
+   17.309,
+   -64.688,
+   19.311
+  ]
+ }
+]
