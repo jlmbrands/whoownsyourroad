@@ -67,7 +67,7 @@ map.on("load", async () => {
     }
     const clickable = map.getStyle().layers.map(l=>l.id).filter(id=>/^(toll|public|other|county|city)(-\d+)?$/.test(id));
     for (const id of clickable) {
-      map.on("click", id, e => { showFeature(e.features[0]); });
+      map.on("click", id, e => { showFeature(e.features[0]); nudge(e.lngLat); });
       map.on("mouseenter", id, ()=>map.getCanvas().style.cursor="pointer");
       map.on("mouseleave", id, ()=>map.getCanvas().style.cursor="");
     }
@@ -98,7 +98,7 @@ map.on("load", async () => {
   const pins={type:"FeatureCollection",features:concessions.filter(c=>c.pin).map(c=>({type:"Feature",properties:{id:c.id,type:c.type,name:c.name},geometry:{type:"Point",coordinates:c.pin}}))};
   map.addSource("pins",{type:"geojson",data:pins});
   map.addLayer({id:"pins",type:"circle",source:"pins",paint:{"circle-radius":["interpolate",["linear"],["zoom"],4,4,10,8],"circle-color":["match",["get","type"],"revenue-concession",css("--road-conc"),"privately-owned-outright",css("--road-private"),css("--road-stoll")],"circle-stroke-color":css("--bg"),"circle-stroke-width":1.5}});
-  map.on("click","pins",e=>{ const c=concessions.find(x=>x.id===e.features[0].properties.id); if(c) showConcession(c); });
+  map.on("click","pins",e=>{ const c=concessions.find(x=>x.id===e.features[0].properties.id); if(c){ showConcession(c); nudge(e.lngLat); } });
   map.on("mouseenter","pins",()=>map.getCanvas().style.cursor="pointer"); map.on("mouseleave","pins",()=>map.getCanvas().style.cursor="");
   buildLegend(); buildIndex();
   let idles=0;
@@ -214,12 +214,15 @@ function buildIndex(){
   body.innerHTML=Object.keys(TYPE_LABEL).filter(t=>groups[t]).map(t=>`<h4>${TYPE_LABEL[t]} (${groups[t].length})</h4>`+groups[t].sort((a,b)=>a.state.localeCompare(b.state)||a.name.localeCompare(b.name)).map(c=>`<button data-id="${esc(c.id)}"><b>${esc(c.state)}</b>${esc(c.name)}</button>`).join("")).join("");
   body.onclick=e=>{ const b=e.target.closest("button[data-id]"); if(!b) return; const c=concessions.find(x=>x.id===b.dataset.id); nav.hidden=true; btn.setAttribute("aria-expanded","false"); flyTo(c); showConcession(c); };
 }
-function flyTo(c){ if (c.pin) map.flyTo({center:c.pin, zoom:11}); else if (c.center) map.flyTo({center:c.center, zoom:c.zoom||10}); }
+function flyTo(c){ const off = isPhone() ? [0,-window.innerHeight*0.22] : [0,0]; if (c.pin) map.flyTo({center:c.pin, zoom:11, offset:off}); else if (c.center) map.flyTo({center:c.center, zoom:c.zoom||10, offset:off}); }
 function buyoutChart(b){
   const rows=b.schedule, max=Math.max(...rows.map(r=>r[1]));
   const bars=rows.map(([l,v])=>`<div class="bar"><span class="bl">${esc(l)}</span><i style="width:${(v/max*100).toFixed(1)}%"></i><span class="bv">$${(v/1e9).toFixed(2)}B</span></div>`).join("");
   return `<div class="buyout" role="img" aria-label="Buyout price by contract year">${bars}</div>${b.schedule_note?`<p class="srcs">${esc(b.schedule_note)}</p>`:""}`;
 }
+// On phones the dossier is a bottom sheet, so move the tapped spot up into the visible third of the map.
+const isPhone = () => window.innerWidth <= 700;
+function nudge(lngLat){ if (isPhone()) map.easeTo({center:lngLat, offset:[0,-window.innerHeight*0.22], duration:350}); }
 function openRail(){ const r=document.getElementById("rail"); r.hidden=false; r.scrollTop=0; }
 document.querySelector("#rail .close").onclick=()=>{ document.getElementById("rail").hidden=true; map.getSource("sel")?.setData({type:"FeatureCollection",features:[]}); };
 function esc(s){ return String(s??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m])); }

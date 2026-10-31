@@ -1,5 +1,11 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0f1115">
+<link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
 <title>Who Owns Your Road</title>
-<meta name="claude:viewport-fit-sides" content="cover">
 <style>
 @font-face { font-family: "Overpass"; font-weight: 400; font-style: normal; font-display: swap; src: url("/fonts/overpass-latin-400-normal.woff2") format("woff2"); }
 @font-face { font-family: "Overpass"; font-weight: 400; font-style: italic; font-display: swap; src: url("/fonts/overpass-latin-400-italic.woff2") format("woff2"); }
@@ -78,14 +84,24 @@ body.bare #brand,body.bare #hint,body.bare #idx-btn,body.bare #legend,body.bare 
 #idx h4{margin:10px 0 4px;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
 #idx button{display:block;width:100%;text-align:left;background:none;border:0;color:var(--fg);font:13px var(--display);padding:4px 0;cursor:pointer;border-bottom:1px solid var(--line)}
 #idx button b{font-family:var(--mono);font-size:11px;color:var(--muted);margin-right:6px}
-@media (max-width:700px){#idx-btn{top:calc(env(safe-area-inset-top,0px) + 100px)}#idx{top:calc(env(safe-area-inset-top,0px) + 140px)}}
 #loading{position:absolute;inset:0;display:grid;place-items:center;font:500 14px var(--mono);color:var(--muted);z-index:7;background:var(--bg)}
 #loading[hidden]{display:none}
 @media (max-width:700px){
-  #rail{top:auto;height:62%;width:100%;border-left:0;border-top:1px solid var(--line);border-radius:14px 14px 0 0}
-  #legend{bottom:auto;top:calc(env(safe-area-inset-top,0px) + 64px);background:none}
+  /* Phones: the dossier is a bottom sheet, the legend a row of chips along the bottom, the title small */
+  #brand{padding:10px 12px;max-width:72%}
+  #brand h1{font-size:18px}
+  #brand p{font-size:11px;line-height:1.35}
+  #rail{top:auto;height:min(64%,560px);width:100%;border-left:0;border-top:1px solid var(--line);border-radius:14px 14px 0 0;padding:26px 16px calc(18px + env(safe-area-inset-bottom,0px));box-shadow:0 -10px 30px rgba(0,0,0,.35)}
+  #rail::before{content:"";position:absolute;top:8px;left:50%;width:40px;height:4px;margin-left:-20px;border-radius:2px;background:var(--line)}
+  #rail h2{font-size:22px}
+  .dossier p{font-size:14px}
+  #legend{flex-direction:row;flex-wrap:wrap;gap:4px 12px;padding:10px 12px calc(10px + env(safe-area-inset-bottom,0px));background:linear-gradient(to top,var(--bg) 60%,transparent)}
+  #legend button{font-size:11px;gap:6px;padding:3px 0}
+  #legend i{width:14px;height:3px}
   #legend .mi{display:none}
   #hint{display:none}
+  #idx-btn{top:auto;bottom:calc(env(safe-area-inset-bottom,0px) + 96px);right:0;margin:0 12px;font-size:12px;padding:9px 12px}
+  #idx{top:auto;bottom:calc(env(safe-area-inset-bottom,0px) + 136px);right:0;margin:0 12px;width:calc(100% - 24px);max-height:55%}
 }
 @media (prefers-reduced-motion:reduce){#rail{transition:none}}
 </style>
@@ -104,4 +120,6 @@ body.bare #brand,body.bare #hint,body.bare #idx-btn,body.bare #legend,body.bare 
 
 <script src="vendor/maplibre-gl.min.js"></script>
 <script src="vendor/pmtiles.js"></script>
-<script src="map.js?v=20261030a"></script>
+<script src="map.js?v=20261030b"></script>
+</body>
+</html>
